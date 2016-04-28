@@ -20,6 +20,5 @@
     <requireInsecurePortalAccess>false</requireInsecurePortalAccess>
     <siteTemplate>SiteTemplate</siteTemplate>
     <siteType>Visualforce</siteType>
-    <subdomain>manywhoos-developer-edition</subdomain>
     <urlPathPrefix>manywho</urlPathPrefix>
 </CustomSite>
