@@ -1,0 +1,47 @@
+<aura:component controller="ManyWhoCurrentUserController"
+                implements="forceCommunity:availableForAllPageTypes,force:hasRecordId" 
+                access="global">
+    <aura:attribute name="userInfo" type="ManyWhoUserInfo" />
+    <aura:attribute name="stateId" type="String" />
+    <aura:attribute name="flowId" type="String" />
+    <aura:attribute name="tenantId" type="String" />
+    <aura:attribute name="mode" type="String" default="" />
+    <aura:attribute name="reportingMode" type="String" default="" />
+    <ltng:require scripts="/resource/manywho_flow/js/vendor/jquery-2.1.4.min.js,
+                           /resource/manywho_flow/js/vendor/bootstrap-3.3.6.min.js,
+                           /resource/manywho_flow/js/vendor/react-0.14.6.min.js,
+                           /resource/manywho_flow/js/vendor/react-dom-0.14.6.min.js,
+                           /resource/manywho_flow/js/vendor/socket.io-1.3.7.js,
+                           /resource/manywho_flow/js/vendor/chosen.jquery-1.4.2.min.js,
+                           /resource/manywho_flow/js/vendor/moment-with-locales-2.10.6.min.js,
+                           /resource/manywho_flow/js/vendor/loglevel-1.4.0.min.js,
+                           /resource/manywho_flow/init.js,
+                           /resource/manywho_flow/js/manywho/compiled.8a19472e.js"
+                  styles="/resource/manywho_flow/css/vendor/mw-bootstrap.ae817fbf.css,
+                          /resource/manywho_flow/css/manywho/compiled.20b1792d.css,
+                          /resource/manywho_flow/css/manywho/mw-sf1.css,
+                          /resource/manywho_flow/init.css"
+                  afterScriptsLoaded="{!c.afterScriptsLoaded}"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    
+    <div id="manywho-lightning-settings" 
+         data-tenant-id="{!v.tenantId}" 
+         data-flow-id="{!v.flowId}"
+         data-session-token="{!v.userInfo.sessionId}"
+         data-session-url="{!v.userInfo.sessionUrl}"
+         data-mode="{!v.mode}"
+         data-reporting-mode="{!v.reportingMode}"
+         data-join="{!v.stateId}">
+    </div>
+    
+    <div id="manywho">
+        <div id="loader" style="width: 100%; height: 100%; background: black; opacity: 1;">
+            <div style="position: absolute; width: 100%; top: 35%; left: 0; text-align: center; color: black; transform: translateY(-50%)">
+                <p style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 2em">
+                    
+                </p>
+            </div>
+        </div>
+    </div>
+    
+</aura:component>
