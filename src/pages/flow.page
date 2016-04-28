@@ -135,8 +135,8 @@
                 var flowId = queryParameters['flow-id'];
                 
                 if (manywho.utils.isNullOrWhitespace(queryParameters['tenant-id'])) {
-                	tenantId = '1ae14654-0699-401f-aaf6-f0adbb5418c8';
-                	flowId = '0fabfe3a-3226-4288-8ea0-be69bb9cb612';
+                    tenantId = '1ae14654-0699-401f-aaf6-f0adbb5418c8';
+                    flowId = '0fabfe3a-3226-4288-8ea0-be69bb9cb612';
                 }
                                 
                 manywho.engine.initialize(
