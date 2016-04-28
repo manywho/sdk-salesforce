@@ -18,7 +18,6 @@
     <masterLabel>ManyWho</masterLabel>
     <requireHttps>true</requireHttps>
     <requireInsecurePortalAccess>false</requireInsecurePortalAccess>
-    <siteAdmin>steve.wood@os.dev</siteAdmin>
     <siteTemplate>SiteTemplate</siteTemplate>
     <siteType>Visualforce</siteType>
     <subdomain>manywhoos-developer-edition</subdomain>
