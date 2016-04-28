@@ -131,17 +131,17 @@
                     isFullWidth: true
                 };
                 
+                var tenantId = queryParameters['tenant-id'];
+                var flowId = queryParameters['flow-id'];
+                
                 if (manywho.utils.isNullOrWhitespace(queryParameters['tenant-id'])) {
-                    alert('Please specify a query string parameter for "tenant-id"');
-                }
-
-                if (manywho.utils.isNullOrWhitespace(queryParameters['flow-id'])) {
-                    alert('Please specify a query string parameter for "flow-id"');
+                	tenantId = '1ae14654-0699-401f-aaf6-f0adbb5418c8';
+                	flowId = '0fabfe3a-3226-4288-8ea0-be69bb9cb612';
                 }
                                 
                 manywho.engine.initialize(
-                    queryParameters['tenant-id'],
-                    queryParameters['flow-id'],
+                    tenantId,
+                    flowId,
                     queryParameters['flow-version-id'],
                     'main',
                     stateId,
