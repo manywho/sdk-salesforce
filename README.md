@@ -49,9 +49,7 @@ We have already created a menu item in Salesforce1 that links to the above Visua
 
 The cool thing about the ManyWho platform is that it supports offline Flows out-of-the-box. So you can build your awesome Flow applications and we've already made sure they'll work offline. Check out this project to get details:
 
-```http
 https://github.com/manywho/ui-cordova
-```
 
 
 ### Communities Lightning Component
