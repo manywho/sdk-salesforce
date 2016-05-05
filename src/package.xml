@@ -37,7 +37,7 @@
         <name>Settings</name>
     </types>
     <types>
-        <members>*</members>
+        <members>Salesforce1</members>
         <name>AppMenu</name>
     </types>
     <types>
