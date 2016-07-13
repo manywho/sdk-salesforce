@@ -393,4 +393,33 @@ global class ManyWhoAPI
         public String data;
         public String level;
     }
+    
+    public class WhoAPI 
+    {
+        public String id;
+        public String firstName;
+        public String lastName;
+        public String email;
+    }
+    
+    public class FlowResponseAPI 
+    {
+        public Datetime dateCreated;
+        public Datetime dateModified;
+        public WhoAPI whoCreated;
+        public WhoAPI whoModified;
+        public WhoAPI whoOwner;
+        public String alertEmail;
+        public Boolean isActive = false;
+        public Boolean isDefault = false;
+        public String comment;
+        public String editingToken;
+        public FlowIdAPI id;
+        public String developerName;
+        public String developerSummary;
+        public String startMapElementId;
+        public Boolean allowJumping = false;
+        public Decimal stateExpirationLength = 0;
+        public GroupAuthorizationAPI authorization;
+    }
 }
