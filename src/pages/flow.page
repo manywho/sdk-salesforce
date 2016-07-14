@@ -87,6 +87,9 @@
             
         var manywho = {
             cdnUrl: 'https://assets.manywho.com',
+            customResources: [
+                '{!URLFOR($Resource.manywho_flow,'js/manywho/hidden.js')}'
+            ],
             initialize: function () {
 
                 var queryParameters = manywho.utils.parseQueryString(window.location.search.substring(1));
