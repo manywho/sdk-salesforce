@@ -3,11 +3,6 @@
     <networkAccess>
         <ipRanges>
             <description>ManyWho Salesforce Connector</description>
-            <end>138.91.153.142</end>
-            <start>138.91.153.142</start>
-        </ipRanges>
-        <ipRanges>
-            <description>ManyWho Salesforce Connector</description>
             <end>54.164.117.86</end>
             <start>54.164.117.86</start>
         </ipRanges>

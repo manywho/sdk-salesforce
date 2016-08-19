@@ -2,9 +2,15 @@
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <types>
         <members>ManyWhoAPI</members>
+        <members>ManyWhoAPI_Tests</members>
         <members>ManyWhoCurrentUserController</members>
         <members>ManyWhoFlowController</members>
+        <members>ManyWhoFlowController_Tests</members>
         <members>ManyWhoHttp</members>
+        <members>ManyWhoHttpMock</members>
+        <members>ManyWhoHttp_Tests</members>
+        <members>ManyWhoObjectUtils</members>
+        <members>ManyWhoObjectUtils_Tests</members>
         <members>ManyWhoReportingService</members>
         <members>ManyWhoUserInfo</members>
         <name>ApexClass</name>

@@ -26,7 +26,7 @@ global class ManyWhoAPI
         
         if (engineValues != null)
         {
-            for(EngineValueAPI engineValue: engineValues)
+            for (EngineValueAPI engineValue : engineValues)
             {
                 if (engineValue.developerName.equalsIgnoreCase(developerName) == true)
                 {
@@ -52,7 +52,12 @@ global class ManyWhoAPI
         public Boolean providesSocial = false;
         public Boolean providesFiles = false;
         public List<DescribeServiceActionResponseAPI> actions;
-        //public DescribeServiceInstallResponseAPI install;
+        public DescribeServiceInstallResponseAPI install;
+    }
+    
+    public class DescribeServiceInstallResponseAPI
+    {
+        public List<TypeElementRequestAPI> typeElements;
     }
     
     public class DescribeValueAPI
@@ -60,6 +65,13 @@ global class ManyWhoAPI
         public DescribeValueAPI(String developerName, String contentType, Boolean isRequired) {
             this.developerName = developerName;
             this.contentType = contentType;
+            this.isRequired = isRequired;
+        }
+
+        public DescribeValueAPI(String developerName, String contentType, String typeElementDeveloperName, Boolean isRequired) {
+            this.developerName = developerName;
+            this.contentType = contentType;
+            this.typeElementDeveloperName = typeElementDeveloperName;
             this.isRequired = isRequired;
         }
     
@@ -108,6 +120,22 @@ global class ManyWhoAPI
             this.contentValue = contentValue;
         }
 
+        public EngineValueAPI(String developerName, String contentType, ManyWhoAPI.ObjectAPI objectData) {
+            this.developerName = developerName;
+            this.contentType = contentType;
+            
+            if (objectData != null) {
+                this.objectData = new List<ManyWhoAPI.ObjectAPI>();
+                this.objectData.Add(objectData);
+            }
+        }
+
+        public EngineValueAPI(String developerName, String contentType, List<ManyWhoAPI.ObjectAPI> objectData) {
+            this.developerName = developerName;
+            this.contentType = contentType;
+            this.objectData = objectData;
+        }
+
         public String valueElementId;
         public String typeElementId;
         public String typeElementPropertyId;
@@ -121,17 +149,42 @@ global class ManyWhoAPI
 
     public class ObjectAPI
     {
+        public ObjectAPI(String externalId, String developerName) {
+            this.externalId = externalId;
+            this.developerName = developerName;
+            this.properties = new List<PropertyAPI>();
+        }
+
         public String internalId;
         public String externalId;
         public String developerName;
         public String typeElementId;
         public Integer order = 0;
         public List<PropertyAPI> properties;
-        public Boolean isSelected;
+        public Boolean isSelected = true;
     }
     
     public class PropertyAPI
     {
+        public PropertyAPI(String developerName, String contentValue) {
+            this.developerName = developerName;
+            this.contentValue = contentValue;
+        }
+
+        public PropertyAPI(String developerName, ManyWhoAPI.ObjectAPI objectData) {
+            this.developerName = developerName;
+            
+            if (objectData != null) {
+                this.objectData = new List<ManyWhoAPI.ObjectAPI>();
+                this.objectData.Add(objectData);
+            }
+        }
+
+        public PropertyAPI(String developerName, List<ManyWhoAPI.ObjectAPI> objectData) {
+            this.developerName = developerName;
+            this.objectData = objectData;
+        }
+
         public String typeElementPropertyId;
         public String developerName;
         public String contentValue;
@@ -234,7 +287,7 @@ global class ManyWhoAPI
         //public Map<String, String> annotations;
         public List<StateEntryAPI> stateEntries;
         public StateEntryAPI precommitStateEntry;
-        //public List<StateValueAPI> values;
+        public List<StateValueAPI> values;
         public String authorizationHeader;
         public Boolean isDone = false;
         //public LogAPI log;
@@ -421,5 +474,63 @@ global class ManyWhoAPI
         public Boolean allowJumping = false;
         public Decimal stateExpirationLength = 0;
         public GroupAuthorizationAPI authorization;
+    }
+    
+    public class TypeElementRequestAPI
+    {
+        public TypeElementRequestAPI(String developerName, String developerSummary) {
+            this.developerName = developerName;
+            this.developerSummary = developerSummary;
+            this.elementType = 'TYPE';
+            this.properties = new List<TypeElementPropertyAPI>();
+        }
+
+        public String id;
+        public String elementType;
+        public String developerName;
+        public String developerSummary;
+        public String serviceElementId;
+        public List<TypeElementPropertyAPI> properties;
+        public List<TypeElementBindingAPI> bindings;
+        public Boolean updateByName = false;
+    }
+
+    public class TypeElementPropertyAPI
+    {
+        public TypeElementPropertyAPI(String developerName, String contentType) {
+            this.developerName = developerName;
+            this.contentType = contentType;
+        }
+        
+        public String id;
+        public String developerName;
+        public String contentType;
+        public String contentFormat;
+        public String typeElementId;
+        public String typeElementDeveloperName;
+    }
+
+    public class TypeElementBindingAPI
+    {
+        public String id;
+        public String developerName;
+        public String developerSummary;
+        public String databaseTableName;
+        public String serviceElementId;
+        public List<TypeElementPropertyBindingAPI> propertyBindings;
+    }
+
+    public class TypeElementPropertyBindingAPI
+    {
+        public TypeElementPropertyBindingAPI(String databaseFieldName, String typeElementPropertyDeveloperName, String databaseContentType) {
+            this.databaseFieldName = databaseFieldName;
+            this.typeElementPropertyDeveloperName = typeElementPropertyDeveloperName;
+            this.databaseContentType = databaseContentType;
+        }
+
+        public String databaseFieldName;
+        public String typeElementPropertyId;
+        public String typeElementPropertyDeveloperName;
+        public String databaseContentType;
     }
 }
