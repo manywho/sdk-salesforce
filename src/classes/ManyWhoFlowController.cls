@@ -3,6 +3,7 @@ public class ManyWhoFlowController {
     private ManyWhoFlow__c[] manywhoflows;
 
     public String stateId { get; set; }
+    public String tenantId { get; set; }
 
     public ManyWhoFlowController(ApexPages.StandardController stdController) {
         String id;
@@ -19,6 +20,14 @@ public class ManyWhoFlowController {
                 String.isNotBlank(manywhoflows[0].JoinUri__c)) {
                 stateId = manywhoflows[0].JoinUri__c.split('join=')[1];
             }
+        }
+        
+        // Get the tenant id from custom settings
+        ManyWho__c customSetting = ManyWho__c.getInstance('Default');
+        if (customSetting != null) {
+            tenantId = customSetting.Tenant_Id__c;
+        } else {
+            tenantId = '';
         }
     }
 }

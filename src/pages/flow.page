@@ -1,6 +1,6 @@
 <apex:page standardController="ManyWhoFlow__c" extensions="ManyWhoFlowController">
-    <link rel="stylesheet" href="{!URLFOR($Resource.manywho_flow,'css/manywho/compiled.20b1792d.css')}" />
-    <link rel="stylesheet" href="{!URLFOR($Resource.manywho_flow,'css/vendor/mw-bootstrap.ae817fbf.css')}" />
+    <link rel="stylesheet" href="{!URLFOR($Resource.manywho_flow,'css/manywho/compiled-86214ab8b6.css')}" />
+    <link rel="stylesheet" href="{!URLFOR($Resource.manywho_flow,'css/vendor/mw-bootstrap-a5cbf9d220.css')}" />
     <link rel="stylesheet" href="{!URLFOR($Resource.manywho_flow,'css/manywho/mw-sf1.css')}" />
     <link rel="stylesheet" href="{!URLFOR($Resource.manywho_flow,'init.css')}" />
     <style type="text/css">
@@ -46,26 +46,11 @@
     </style>
     
     <div class="mw-bs">
-        <div class="container-fluid">
-            <ul class="nav nav-tabs">
-                <li class="active"><a data-toggle="tab" href="#flow">Flow</a></li>
-                <li><a data-toggle="tab" href="#journey">Journey</a></li>
-            </ul>
-            <div class="tab-content">
-                <div id="flow" class="tab-pane fade in active">
-        
-                    <div id="manywho" style="width: 100%; height: 100%;">
-                        <div id="loader" class="mw-bs" style="width: 100%; height: 100%;">
-                            <div class="wait-container">
-                                <div class="wait-spinner"></div>
-                                <span class="wait-message">Authenticating</span>
-                            </div>
-                        </div>
-                    </div>
-                
-                </div>
-                <div id="journey" class="tab-pane fade">
-                    <div class="mw-bs container" id="timeline"></div>                
+        <div id="manywho" style="width: 100%; height: 100%;">
+            <div id="loader" class="mw-bs" style="width: 100%; height: 100%;">
+                <div class="wait-container">
+                    <div class="wait-spinner"></div>
+                    <span class="wait-message">Authenticating</span>
                 </div>
             </div>
         </div>
@@ -145,10 +130,11 @@
                     isFullWidth: true
                 };
                 
-                var tenantId = queryParameters['tenant-id'];
+                var tenantId = '{!tenantId}';
                 var flowId = queryParameters['flow-id'];
                 
-                if (manywho.utils.isNullOrWhitespace(queryParameters['tenant-id'])) {
+                // If the tenant id has not be changed, we load the default Flow
+                if (tenantId.trim().length == 0) {
                     tenantId = '1ae14654-0699-401f-aaf6-f0adbb5418c8';
                     flowId = '0fabfe3a-3226-4288-8ea0-be69bb9cb612';
                 }
@@ -169,7 +155,7 @@
         };
     </script>
 
-    <script src="{!URLFOR($Resource.manywho_flow,'js/manywho/compiled.8a19472e.js')}"></script>
+    <script src="{!URLFOR($Resource.manywho_flow,'js/manywho/compiled-87d52ba693.js')}"></script>
 
     <script>
         (function (manywho, window, $) {

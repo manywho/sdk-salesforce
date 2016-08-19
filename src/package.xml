@@ -28,7 +28,7 @@
         <name>AuraDefinitionBundle</name>
     </types>
     <types>
-        <members>ManyWhoFlow__c</members>
+        <members>*</members>
         <name>CustomObject</name>
     </types>
     <types>
@@ -44,6 +44,10 @@
     <types>
         <members>manywho_flow</members>
         <name>StaticResource</name>
+    </types>
+    <types>
+        <members>Security</members>
+        <name>Settings</name>
     </types>
     <version>36.0</version>
 </Package>

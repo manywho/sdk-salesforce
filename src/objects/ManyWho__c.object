@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
+    <description>The custom settings for ManyWho</description>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>Tenant_Id__c</fullName>
+        <description>The identifier for the Tenant that contains the Flows</description>
+        <externalId>false</externalId>
+        <label>Tenant Id</label>
+        <length>100</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>ManyWho</label>
+    <visibility>Protected</visibility>
+</CustomObject>
