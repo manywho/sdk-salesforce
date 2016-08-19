@@ -12,6 +12,10 @@ Special thanks to Andy of FinancialForce for making this great deployment utilit
 
 https://andyinthecloud.com
 
+You can also install this code using the standard Salesforce Package Manager. However, it cannot be upgraded due to limitations in Salesforce with unmanaged packages:
+
+https://login.salesforce.com/packaging/installPackage.apexp?p0=04t36000000d4D4
+
 ## Contents
 
 There are a few cool things in this package that you can use and configure as you like.
