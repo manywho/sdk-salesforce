@@ -111,22 +111,22 @@
                     queryParameters['object-id'].trim().length > 0) {
                     inputValues = [];
                     inputValues.push({
-                		'developerName': 'SalesforceNotificationRecordId',
-                		'contentType': 'ContentString',
-                		'contentValue': queryParameters['object-id'],
-                	});
+                        'developerName': 'SalesforceNotificationRecordId',
+                        'contentType': 'ContentString',
+                        'contentValue': queryParameters['object-id'],
+                    });
                 }
                 
                 if (queryParameters['object-name'] != null &&
                     queryParameters['object-name'].trim().length > 0) {
                     if (inputValues == null) {
-                    	inputValues = [];
+                        inputValues = [];
                     }
                     inputValues.push({
-                		'developerName': 'SalesforceNotificationObjectName',
-                		'contentType': 'ContentString',
-                		'contentValue': queryParameters['object-name'],
-                	});
+                        'developerName': 'SalesforceNotificationObjectName',
+                        'contentType': 'ContentString',
+                        'contentValue': queryParameters['object-name'],
+                    });
                 }
                 
                 var options = {
