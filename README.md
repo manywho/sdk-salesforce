@@ -8,13 +8,29 @@ This project contains the basic configuration settings for running ManyWho insid
        src="https://raw.githubusercontent.com/afawcett/githubsfdeploy/master/deploy.png">
 </a>
 
+**Troubleshooting**
+
+If you get this message:
+Oops, something went wrong... Authentication Failed: OAuth login invalid or expired access token. Be sure your Salesforce organization does not have IP restrictions. Logout and try with another user or organization.
+
+1. Click on the Logout link on the error page
+1. Login to your Salesforce Org
+1. Go to Setup -> Critical Updates (Build menu) -> Click on the Deactivate button beside 'Require TLS 1.1 or higher for HTTPS connections'
+1. Click on Deactivate
+1. In the Administer section, expand the Manage Apps section and click on Connected Apps OAuth Usage. Click on Block beside the GitHub app. Then click on Unblock to remove it from the list
+1. In the Administer section, expand the Manage Users section and click on Profiles. For your user profile (likely Systems Administrator), open the Profile
+1. In the Login IP Ranges section for the Profile page, click on New
+1. For the IP Start Address, provide: 0.0.0.0
+1. For the IP End Address, provide 255.255.255.255
+1. Click on the Save button
+
 Special thanks to Andy of FinancialForce for making this great deployment utility. You can read more about Andy here:
 
 https://andyinthecloud.com
 
 You can also install this code using the standard Salesforce Package Manager. However, it cannot be upgraded due to limitations in Salesforce with unmanaged packages:
 
-https://login.salesforce.com/packaging/installPackage.apexp?p0=04t36000000d4D4
+https://login.salesforce.com/packaging/installPackage.apexp?p0=04t3600000102gA
 
 ## Contents
 
