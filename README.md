@@ -3,9 +3,22 @@ ManyWho SDK for Salesforce
 
 This project contains the basic configuration settings for running ManyWho inside Salesforce. In addition, the project includes an example Visualforce page and Lightning Component for Communities. This code can be customized as needed to meet your organizational objectives.
 
+## Install the Unmanaged Package
+
 You can install this code using the standard Salesforce Package Manager. However, it cannot be upgraded due to limitations in Salesforce with unmanaged packages:
 
 https://login.salesforce.com/packaging/installPackage.apexp?p0=04t3600000102gA
+
+After installing, you must manually configure network access:
+
+1. Click on Setup in Salesforce
+1. In the **Administer**section, expand the **Security Controls** menu and click on **Network Access**
+1. Create 3 new *Trusted IP Ranges*:
+  * Start IP Address: **54.164.117.86**, End IP Address: **54.164.117.86**
+  * Start IP Address: **54.88.201.125**, End IP Address: **54.88.201.125**
+  * Start IP Address: **54.84.53.201**, End IP Address: **54.84.53.201**
+
+## Install from GitHub
 
 You can also install this code using the GitHub deploy tool built by FinancialForce. However, users have reported login issues:
 
