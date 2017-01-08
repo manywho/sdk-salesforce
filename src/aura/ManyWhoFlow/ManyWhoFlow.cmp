@@ -15,12 +15,10 @@
                            /resource/manywho_flow/js/vendor/chosen.jquery-1.4.2.min.js,
                            /resource/manywho_flow/js/vendor/moment-with-locales-2.10.6.min.js,
                            /resource/manywho_flow/js/vendor/loglevel-1.4.0.min.js,
-                           /resource/manywho_flow/init.js,
-                           /resource/manywho_flow/js/manywho/compiled.8a19472e.js"
-                  styles="/resource/manywho_flow/css/vendor/mw-bootstrap.ae817fbf.css,
-                          /resource/manywho_flow/css/manywho/compiled.20b1792d.css,
-                          /resource/manywho_flow/css/manywho/mw-sf1.css,
-                          /resource/manywho_flow/init.css"
+                           /resource/manywho_flow/js/manywho/compiled-ed9ac590b8.js"
+                  styles="/resource/manywho_flow/css/manywho/compiled-dd3c34a1ed.css,
+                          /resource/manywho_flow/css/manywho/mw-bootstrap-31d109140c.css,
+                          /resource/manywho_flow/css/themes/mw-sf1.css"
                   afterScriptsLoaded="{!c.afterScriptsLoaded}"/>
     <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
     
@@ -34,12 +32,13 @@
          data-join="{!v.stateId}">
     </div>
     
-    <div id="manywho">
-        <div id="loader" style="width: 100%; height: 100%; background: black; opacity: 1;">
-            <div style="position: absolute; width: 100%; top: 35%; left: 0; text-align: center; color: black; transform: translateY(-50%)">
-                <p style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 2em">
-                    
-                </p>
+    <div class="mw-bs">
+        <div id="manywho" style="width: 100%; height: 100%;">
+            <div id="loader" class="mw-bs" style="width: 100%; height: 100%;">
+                <div class="wait-container">
+                    <div class="wait-spinner"></div>
+                    <span class="wait-message">Authenticating</span>
+                </div>
             </div>
         </div>
     </div>

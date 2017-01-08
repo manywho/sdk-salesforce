@@ -2,3 +2,176 @@
     min-height: 50px;
     min-width: 100%;
 }
+
+.THIS #contentWrapper{
+    overflow-x: hidden;
+}
+
+.THIS ul, .THIS li {
+    margin-left: 0px !important;
+}
+
+.THIS .mw-bs .wait-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    min-height: 500px;
+    z-index: 1100;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.THIS .mw-bs .wait-spinner
+{
+    content: url('/resource/manywho_flow/images/manywholightningwaitgif.gif');
+    display: block;
+    position: relative;
+    left: 50%;
+    top: 40%;
+    width: 60px;
+    height: 60px;
+    margin: -30px 0 0 -30px;
+    border-radius: initial;
+    border: initial;
+    border-top-color: initial;
+    -webkit-animation: none;
+    animation: none;
+}
+
+.THIS .mw-bs .status > .wait-spinner {
+    content:url('/resource/manywho_flow/images/manywhogreentick.png') !important;
+}
+
+.THIS .mw-bs .wait-spinner-small
+{
+    content: url('/resource/manywho_flow/images/manywholightningwaitgif.gif');
+    width: 20px;
+    height: 20px;
+    margin:-10px 0 0 -10px
+}
+
+.THIS .mw-bs .wait-spinner + .wait-message {
+    display: block;
+    position: relative;
+    top: 45%;
+    text-align: center;
+}
+
+.THIS .mw-bs {
+    margin-top: 10px !important;
+}
+
+.THIS .mw-bs .navbar {
+    margin-bottom: 0px !important;
+}
+
+.THIS .mw-bs h1 {
+    margin-top: 10px !important;
+    display: block !important;
+}
+
+.THIS .mw-bs h3 {
+    margin-top: 0px !important;
+    display: block !important;
+}
+
+.THIS .mw-bs div.mw-container {
+    padding-left: 0px !important;
+}
+
+.THIS .mw-bs .btn > .glyphicon {
+    color: rgb(0, 0, 0) !important;
+}
+
+.THIS .mw-bs .navbar-chevrons {
+    all: initial;
+}
+
+.THIS .mw-bs .navbar-chevrons > ul {
+    all: initial;
+}
+
+.THIS .mw-bs .navbar-chevrons > ul > li {
+    all: initial;
+}
+
+.THIS .mw-bs .navbar-chevrons > ul > li > a {
+    all: initial;
+}
+
+.THIS .mw-bs .navbar-chevrons > ul > li > a:before {
+    all: initial;
+}
+
+.THIS .mw-bs .navbar-chevrons > ul > li > a:after {
+    all: initial;
+}
+
+.THIS .mw-bs .navbar-chevrons {
+    padding-left: 15px;
+}
+
+.THIS .mw-bs .navbar-chevrons ul li a {
+    display: block;
+    float: left;
+    height: 28px;
+    background: rgb(75, 202, 129);
+    text-align: center;
+    padding: 12px 15px 0 25px;
+    position: relative;
+    margin: 0 3px 0 0;             
+    font-size: 14px;
+    text-decoration: none;
+    color: #fff;
+    font-family: ProximaNovaSoft-Regular,Calibri,"Gill Sans","Gill Sans MT",Candara,Segoe,"Segoe UI",Arial,sans-serif;
+}
+
+.THIS .mw-bs .navbar-chevrons ul li a:after {
+    content: "";  
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    border-left: 20px solid rgb(75, 202, 129);
+    position: absolute; right: -20px; top: 0;
+    z-index: 1;
+}
+
+.THIS .mw-bs .navbar-chevrons ul li.active a {
+    background: rgb(0, 112, 210);
+}
+
+.THIS .mw-bs .navbar-chevrons ul li.active a:after {
+    border-left: 20px solid rgb(0, 112, 210);
+}
+
+.THIS .mw-bs .navbar-chevrons ul li.active~li a {
+    background: #F0F0F0;
+    color: rgb(60, 61, 62);
+}
+
+.THIS .mw-bs .navbar-chevrons ul li.active~li a:after {
+    border-left: 20px solid #F0F0F0;
+}
+
+.THIS .mw-bs .navbar-chevrons ul li a:before {
+    content: "";  
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    border-left: 20px solid #ffffff;
+    position: absolute; left: 0; top: 0;
+}
+
+.THIS .mw-bs .navbar-chevrons ul li:first-child a {
+    border-top-left-radius: 10px; border-bottom-left-radius: 10px;
+}
+.THIS .mw-bs .navbar-chevrons ul li:first-child a:before {
+    display: none; 
+}
+
+.THIS .mw-bs .navbar-chevrons ul li:last-child a {
+    padding-right: 30px;
+    border-top-right-radius: 10px; border-bottom-right-radius: 10px;
+}
+.THIS .mw-bs .navbar-chevrons ul li:last-child a:after {
+    display: none; 
+}
