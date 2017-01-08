@@ -13611,16 +13611,87 @@
   border-radius: 100%;
   background: white;
 }
-.mw-bs h3.container-label {
-  width: 100% !important;
-  background-color: #2a94d6 !important;
-  float: left !important;
-  clear: left !important;
-  padding: 5px 5px 5px 5px !important;
+.mw-bs .btn-default.btn-outline {
+  color: #bbc0c4;
 }
-.mw-bs h3.container-label > span {
-  color: #ffffff !important;
+.mw-bs .btn-primary.btn-outline {
+  color: #2585c1;
 }
-.mw-bs .navbar .navbar-nav > li > a > span {
-  color: #ffffff !important;
+.mw-bs .btn-success.btn-outline {
+  color: #43a266;
+}
+.mw-bs .btn-info.btn-outline {
+  color: #3aa8c5;
+}
+.mw-bs .btn-warning.btn-outline {
+  color: #f1a336;
+}
+.mw-bs .btn-danger.btn-outline {
+  color: #c9484d;
+}
+.mw-bs .btn > .glyphicon {
+  color: white;
+}
+.mw-bs .mw-toggle input:checked + div {
+  background: #2585c1;
+}
+.mw-bs .mw-toggle input:focus + div {
+  box-shadow: 0 0 1px #2585c1;
+}
+.mw-bs .mw-toggle input:checked + div.success {
+  background: #43a266;
+}
+.mw-bs .mw-toggle input:focus + div.success {
+  box-shadow: 0 0 1px #43a266;
+}
+.mw-bs .mw-toggle input:checked + div.info {
+  background: #3aa8c5;
+}
+.mw-bs .mw-toggle input:focus + div.info {
+  box-shadow: 0 0 1px #3aa8c5;
+}
+.mw-bs .mw-toggle input:checked + div.warning {
+  background: #f1a336;
+}
+.mw-bs .mw-toggle input:focus + div.warning {
+  box-shadow: 0 0 1px #f1a336;
+}
+.mw-bs .mw-toggle input:checked + div.danger {
+  background: #c9484d;
+}
+.mw-bs .mw-toggle input:focus + div.danger {
+  box-shadow: 0 0 1px #c9484d;
+}
+.mw-bs .navbar-wizard .steps > li {
+  color: #43a266;
+}
+.mw-bs .navbar-wizard .steps > li > .glyphicon {
+  background-color: #43a266;
+}
+.mw-bs .navbar-wizard .steps > li > .indicator {
+  background-color: #43a266;
+}
+.mw-bs .navbar-wizard .steps > li .indicator:before,
+.mw-bs .navbar-wizard .steps > li .indicator:after {
+  background-color: #43a266;
+}
+.mw-bs .navbar-wizard .steps > li.active {
+  color: #2585c1;
+}
+.mw-bs .navbar-wizard .steps > li.active > .indicator {
+  background-color: #2585c1;
+}
+.mw-bs .navbar-wizard .steps > li.active .indicator:before,
+.mw-bs .navbar-wizard .steps > li.active .indicator:after {
+  background-color: #2585c1;
+}
+.mw-bs .navbar-wizard .steps > li.active ~ li {
+  color: #888888;
+}
+.mw-bs .navbar-wizard .steps > li.active ~ li > .indicator {
+  background-color: #bbbbbb;
+}
+.mw-bs .navbar-wizard .steps > li.active ~ li .indicator:before,
+.mw-bs .navbar-wizard .steps > li.active ~ li .indicator:after {
+  background-color: #bbbbbb;
 }
