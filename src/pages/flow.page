@@ -82,6 +82,10 @@
             margin-bottom: 0px !important;
         }
 
+        .mw-bs .outcome {
+            color: #ffffff !important;
+        }
+
         .mw-bs h1 {
             margin-top: 10px !important;
             display: block !important;
