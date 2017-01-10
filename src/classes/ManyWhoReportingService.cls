@@ -32,30 +32,6 @@ global class ManyWhoReportingService {
                 flow.StateJSON__c = jsonGenerator.getAsString();
                 
                 update flow;
-                
-                //Attachment attachment = null;
-                //List<Attachment> attachments = null;
-                
-                //attachments = [SELECT Name FROM Attachment WHERE Name = :stateAPI.id];
-
-                //if (attachments != null &&
-                //    attachments.size() > 0) {
-                                        
-                //    Attachment freshAttachment = attachments[0];
-                //    freshAttachment.Body = Blob.valueOf(RestContext.request.requestBody.toString());
-
-                //    delete attachments;
-
-                //    insert freshAttachment;
-                //} else {                                    
-                //    attachment = new Attachment();
-                //    attachment.ParentId = flow.Id;
-                //    attachment.Name = stateAPI.id;
-                //    attachment.ContentType = 'application/json';
-                //    attachment.Body = Blob.valueOf(RestContext.request.requestBody.toString());
-    
-                //    insert attachment;
-                //}
             }
         }
         
