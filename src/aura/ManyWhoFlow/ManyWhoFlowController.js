@@ -1,22 +1,38 @@
 ({
-    doInit: function(cmp) {
+    sendMessage : function(component, event, helper) {
+        var userAction = component.get("c.getUserInfo");
         
-        var userAction = cmp.get("c.getUserInfo");
         userAction.setCallback(this, function(response){
             var state = response.getState();
+            
             if (state === "SUCCESS") {
-                cmp.set("v.userInfo", response.getReturnValue());
+                var userInfo = response.getReturnValue();
+				var resourceUrl = $A.get('$Resource.manywho_flow');
+
+		        var startInfo = {
+		        	tenantId: v.tenantId,
+		        	flowId: v.flowId,
+		            sessionId: userInfo.sessionId,
+		            sessionUrl: userInfo.sessionUrl,
+		            resourceUrl: resourceUrl
+		        };
+		        
+		        component.find("ManyWhoFlowApp").message(startInfo);
             }
         });
-        
+
         $A.enqueueAction(userAction);
-        
-     },
+    },
     
-     afterScriptsLoaded : function(cmp, event, helper) {
-
-        // Initialize the flow as expected
-		manywho.initialize();
-
-     }
- })
+    handleMessage: function(component, message, helper) {
+        var payload = message.payload;
+        var name = payload.name;
+        
+        if (name === "General") {
+            var value = payload.value;
+            component.set("v.messageReceived", value);
+        } else if (name === "Foo") {
+            // A different response
+        }
+    }
+})

@@ -1,6 +1,6 @@
 <apex:page standardController="ManyWhoFlow__c" extensions="ManyWhoFlowController">
-    <link rel="stylesheet" href="{!URLFOR($Resource.manywho_flow,'css/manywho/mw-bootstrap-31d109140c.css')}" />
-    <link rel="stylesheet" href="{!URLFOR($Resource.manywho_flow,'css/manywho/compiled-dd3c34a1ed.css')}" />
+    <link rel="stylesheet" href="{!URLFOR($Resource.manywho_flow,'css/manywho/mw-bootstrap-2d0a35d387.css')}" />
+    <link rel="stylesheet" href="{!URLFOR($Resource.manywho_flow,'css/manywho/compiled-a5f8d32268.css')}" />
     <link rel="stylesheet" href="{!URLFOR($Resource.manywho_flow,'css/themes/mw-sf1.css')}" />
     <style type="text/css">
         
@@ -84,6 +84,14 @@
 
         .mw-bs .outcome {
             color: #ffffff !important;
+        }
+
+        .mw-bs button.btn-default {
+            color: #5c7995 !important;
+        }
+
+        .mw-bs input.datepicker {
+            padding-left: 14px;
         }
 
         .mw-bs h1 {
@@ -231,7 +239,7 @@
     <script src="{!URLFOR($Resource.manywho_flow,'js/vendor/bootstrap-3.3.6.min.js')}"></script>
     <script src="{!URLFOR($Resource.manywho_flow,'js/vendor/react-0.14.6.min.js')}"></script>
     <script src="{!URLFOR($Resource.manywho_flow,'js/vendor/react-dom-0.14.6.min.js')}"></script>
-    <script src="{!URLFOR($Resource.manywho_flow,'js/vendor/socket.io-1.3.7.js')}"></script>
+    <script src="{!URLFOR($Resource.manywho_flow,'js/vendor/socket.io-1.4.5.js')}"></script>
     <script src="{!URLFOR($Resource.manywho_flow,'js/vendor/chosen.jquery-1.4.2.min.js')}"></script>
     <script src="{!URLFOR($Resource.manywho_flow,'js/vendor/moment-with-locales-2.10.6.min.js')}"></script>
     <script src="{!URLFOR($Resource.manywho_flow,'js/vendor/loglevel-1.4.0.min.js')}"></script>
@@ -348,7 +356,7 @@
         };
     </script>
 
-    <script type="text/javascript" src="https://assets.manywho.com/js/compiled-ed9ac590b8.js"></script>
+    <script type="text/javascript" src="https://assets.manywho.com/js/compiled-6fbefb4c67.js"></script>
 
     <script>
         (function (manywho, window, $) {
