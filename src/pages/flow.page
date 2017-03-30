@@ -112,6 +112,14 @@
             color: rgb(0, 0, 0) !important;
         }
 
+        .mw-bs li.active span {
+            color: #ffffff !important;
+        }
+
+        .mw-bs li.active th {
+            color: #ffffff !important;
+        }
+
         .mw-bs .navbar-chevrons {
           all: initial;
           * {

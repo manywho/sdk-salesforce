@@ -1,4 +1,4 @@
-<design:component>
+<design:component >
 	<design:attribute name="tenantId" label="Tenant Id" description="The unique identifier of the ManyWho Tenant" />
     <design:attribute name="flowId" label="Flow Id" description="The unique identifier of the Flow" />
 </design:component>
