@@ -24,7 +24,7 @@
 
 .THIS .mw-bs .wait-spinner
 {
-    content: url('/resource/manywho_flow/images/manywholightningwaitgif.gif');
+    content: url('/sfsites/c/resource/manywho_flow/images/manywholightningwaitgif.gif');
     display: block;
     position: relative;
     left: 50%;
@@ -40,12 +40,12 @@
 }
 
 .THIS .mw-bs .status > .wait-spinner {
-    content:url('/resource/manywho_flow/images/manywhogreentick.png') !important;
+    content:url('/sfsites/c/resource/manywho_flow/images/manywhogreentick.png') !important;
 }
 
 .THIS .mw-bs .wait-spinner-small
 {
-    content: url('/resource/manywho_flow/images/manywholightningwaitgif.gif');
+    content: url('/sfsites/c/resource/manywho_flow/images/manywholightningwaitgif.gif');
     width: 20px;
     height: 20px;
     margin:-10px 0 0 -10px
@@ -56,10 +56,6 @@
     position: relative;
     top: 45%;
     text-align: center;
-}
-
-.THIS .mw-bs {
-    margin-top: 10px !important;
 }
 
 .THIS .mw-bs .navbar {

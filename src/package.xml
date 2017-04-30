@@ -4,15 +4,20 @@
         <members>ManyWhoAPI</members>
         <members>ManyWhoAPI_Tests</members>
         <members>ManyWhoCurrentUserController</members>
+        <members>ManyWhoCurrentUserController_Tests</members>
         <members>ManyWhoFlowController</members>
         <members>ManyWhoFlowController_Tests</members>
         <members>ManyWhoHttp</members>
         <members>ManyWhoHttpMock</members>
+        <members>ManyWhoHttpMock_Tests</members>
         <members>ManyWhoHttp_Tests</members>
         <members>ManyWhoObjectUtils</members>
         <members>ManyWhoObjectUtils_Tests</members>
         <members>ManyWhoReportingService</members>
+        <members>ManyWhoReportingService_Tests</members>
+        <members>ManyWhoRun</members>
         <members>ManyWhoUserInfo</members>
+        <members>ManyWhoUserInfo_Tests</members>
         <name>ApexClass</name>
     </types>
     <types>
@@ -20,19 +25,15 @@
         <name>ApexPage</name>
     </types>
     <types>
-        <members>Salesforce1</members>
-        <name>AppMenu</name>
+        <members>ManyWho</members>
+        <name>CustomApplication</name>
     </types>
     <types>
-        <members>ManyWhoFlow</members>
-        <name>AuraDefinitionBundle</name>
-    </types>
-    <types>
-        <members>*</members>
+        <members>ManyWhoFlow__c</members>
         <name>CustomObject</name>
     </types>
     <types>
-        <members>ManyWho_Flow</members>
+        <members>*</members>
         <name>CustomTab</name>
     </types>
     <types>
@@ -44,10 +45,6 @@
     <types>
         <members>manywho_flow</members>
         <name>StaticResource</name>
-    </types>
-    <types>
-        <members>Security</members>
-        <name>Settings</name>
     </types>
     <version>36.0</version>
 </Package>

@@ -14,34 +14,68 @@ var manywho = {
             }
         });
 
+        // Pass input values into the page if they have been provided
+        var inputValues = null;
+        
+        if ($('#manywho-lightning-settings').data('object-id') != null &&
+            $('#manywho-lightning-settings').data('object-id').trim().length > 0) {
+            inputValues = [];
+            inputValues.push({
+                'developerName': 'SalesforceNotificationRecordId',
+                'contentType': 'ContentString',
+                'contentValue': $('#manywho-lightning-settings').data('object-id'),
+            });
+        }
+        
+        if ($('#manywho-lightning-settings').data('object-name') != null &&
+            $('#manywho-lightning-settings').data('object-name').trim().length > 0) {
+            if (inputValues == null) {
+                inputValues = [];
+            }
+            inputValues.push({
+                'developerName': 'SalesforceNotificationObjectName',
+                'contentType': 'ContentString',
+                'contentValue': $('#manywho-lightning-settings').data('object-name'),
+            });
+        }
+        
+        var salesforceSessionId = null;
+        var salesforceSessionUrl = null;
+        
+        // Only send the session information if configured to do so
+        if (manywho.utils.isEqual('true', $('#manywho-lightning-settings').data('provide-session-info'), true)) {
+        	salesforceSessionId = $('#manywho-lightning-settings').data('session-token');
+        	salesforceSessionUrl = $('#manywho-lightning-settings').data('session-url');
+        }
+        
         var options = {
             authentication: {
-                sessionId: $('#manywho-lightning-settings').data('session-token'),
-                sessionUrl: $('#manywho-lightning-settings').data('session-url')
+                sessionId: salesforceSessionId,
+                sessionUrl: salesforceSessionUrl
             },
-            navigationElementId: queryParameters['navigation-element-id'],
+            navigationElementId: $('#manywho-lightning-settings').data('navigation-element-id'),
             mode: $('#manywho-lightning-settings').data('mode'),
             reportingMode: $('#manywho-lightning-settings').data('reporting-mode'),
             replaceUrl: false,
             collaboration: {
-                isEnabled: true
+                isEnabled: manywho.utils.isEqual('true', $('#manywho-lightning-settings').data('collaboration-is-enabled'), true)
             },
-            inputs: null,
+            inputs: inputValues,
             annotations: null,
             navigation: {
-                isFixed: false,
-                isWizard: false
+                isFixed: manywho.utils.isEqual('true', $('#manywho-lightning-settings').data('navigation-is-fixed'), true),
+                isWizard: manywho.utils.isEqual('true', $('#manywho-lightning-settings').data('navigation-is-wizard'), true)
             },
             callbacks: [],
-            collapsible: false
+            collapsible: manywho.utils.isEqual('true', $('#manywho-lightning-settings').data('collapsible'), true)
         };
 
         manywho.engine.initialize(
             $('#manywho-lightning-settings').data('tenant-id'),
             $('#manywho-lightning-settings').data('flow-id'),
-            queryParameters['flow-version-id'],
+            $('#manywho-lightning-settings').data('flow-version-id'),
             'main',
-            queryParameters['join'],
+            $('#manywho-lightning-settings').data('join'),
             queryParameters['authorization'],
             options,
             queryParameters['initialization']

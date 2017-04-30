@@ -2,9 +2,17 @@ public with sharing class ManyWhoCurrentUserController {
      
     @AuraEnabled
     public static ManyWhoUserInfo getUserInfo() {
+        // Get the tenant id from custom settings
+        String manywhoTenantId = null;
+        ManyWho__c customSetting = ManyWho__c.getInstance('Default');
+        if (customSetting != null) {
+            manywhoTenantId = customSetting.Tenant_Id__c;
+        }
+    	
         ManyWhoUserInfo manywhoUserInfo = new ManyWhoUserInfo(
             userinfo.getSessionId(),
-            '/services/Soap/u/26.0/' + userInfo.getOrganizationId(),
+            System.URL.getSalesforceBaseURL().toExternalForm() + '/services/Soap/u/26.0/' + userInfo.getOrganizationId(),
+            manywhoTenantId,
             userinfo.getUserId()
         );
             
@@ -29,5 +37,4 @@ public with sharing class ManyWhoCurrentUserController {
 
         return stateId;
     }
-
 }
