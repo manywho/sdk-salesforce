@@ -9,6 +9,20 @@ public class ManyWhoObjectUtils
 
     }
 
+    public static List<SObject> getFullSObjectRecords(String objectName, List<String> objectIDs) {
+
+        return Database.query(getSelectByIds(objectName, objectIDs));
+
+    }
+
+    public static List<SObject> getFullSObjectRecords(String objectName, String whereClause) {
+
+        system.debug('soql: ' + getSelectByIds(objectName, whereClause));
+
+        return Database.query(getSelectByIds(objectName, whereClause));
+
+    }
+
     public static List<SObject> getSObjectRecords(String soql) {
 
         return Database.query(soql);
@@ -20,6 +34,26 @@ public class ManyWhoObjectUtils
         String soql = getSelectAll(objectName);
         
         soql += ' WHERE Id = \'' + objectID + '\'';
+
+        return soql;
+
+    }
+
+    public static String getSelectByIds(String objectName, List<String> objectIDs) {
+
+        String soql = getSelectAll(objectName);
+        
+        soql += ' WHERE Id IN (\'' + String.join(objectIDs, '\',\'') + '\')';
+
+        return soql;
+
+    }
+
+    public static String getSelectByIds(String objectName, String whereClause) {
+
+        String soql = getSelectAll(objectName);
+        
+        soql += whereClause;
 
         return soql;
 
