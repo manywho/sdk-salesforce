@@ -8,9 +8,9 @@
     <design:attribute name="navigationIsWizard" label="Show Navigation as Chevrons" description="The Navigation can be shown as a menu (default) or as chevrons" />
     <design:attribute name="collaborationIsEnabled" label="Enable Realtime Collaboration" description="ManyWho pages can support realtime co-edit and co-navigation, however LockerService will disable this feature" />
     <design:attribute name="collapsible" label="Enable Collapsible Containers" description="Determines if a user can collapse labelled Containers in your Page Layouts" />
-    <design:attribute name="visualforceHostProd" label="Visual Force Host Production" description="This URL can be found at the All Communities section (the field URL)" />
-    <design:attribute name="visualforceHostPreview" label="Visual Force Host Preview" description="This URL is the same that you get if you open a for a visualforce page and click on preview" />
-    <design:attribute name="lightningOriginPreview" label="Lightning Origin Preview" description="This URL will be similar to Visual Force Host Preview, but changin c by livepreview and removing visual" />
+    <design:attribute name="visualforceHostProd" label="Visual Force Host Production" description="This URL can be found at the 'All Communities' section (the field 'URL')" />
+    <design:attribute name="visualforceHostPreview" label="Visual Force Host Preview" description="This URL is the same that you get if you open a visualforce page and click on preview" />
+    <design:attribute name="lightningOriginPreview" label="Lightning Origin Preview" description="This URL will be similar to the 'Visual Force Host Preview', but changin 'c' by 'livepreview' and removing the word 'visual'" />
     <design:attribute name="communityName" label="Community Name" description="Community Name" />
     <design:attribute name="persistUrl" label="Persist the url's" description="Persist the url's" />
 </design:component>
