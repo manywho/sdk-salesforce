@@ -18,6 +18,7 @@
         <members>ManyWhoRun</members>
         <members>ManyWhoUserInfo</members>
         <members>ManyWhoUserInfo_Tests</members>
+        <members>ManyWhoFlowUserSessionController</members>
         <name>ApexClass</name>
     </types>
     <types>
@@ -29,7 +30,7 @@
         <name>CustomApplication</name>
     </types>
     <types>
-        <members>ManyWhoFlow__c</members>
+        <members>*</members>
         <name>CustomObject</name>
     </types>
     <types>
