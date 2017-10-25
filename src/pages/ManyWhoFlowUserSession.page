@@ -1,0 +1,15 @@
+<apex:page showHeader="false" sidebar="false" controller="ManyWhoFlowUserSessionController">
+<script>
+    function sendToLightning(origin) {
+        parent.postMessage(JSON.stringify({
+            sessionId: "{!$Api.Session_ID}",
+            sessionUrl: "{!$Api.Partner_Server_URL_260}"
+        }), origin);
+    }
+    
+	if ({!valid}) {
+        sendToLightning("{!lightningOriginProd}");
+    	sendToLightning("{!lightningOriginPreview}");
+    }
+</script>
+</apex:page>

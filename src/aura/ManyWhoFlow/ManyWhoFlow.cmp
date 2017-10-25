@@ -1,19 +1,29 @@
-<aura:component controller="ManyWhoCurrentUserController"
+<aura:component controller="ManyWhoFlowUserSessionController"
                 implements="forceCommunity:availableForAllPageTypes,force:hasRecordId" 
                 access="global">
+    <aura:attribute name="tenantId" type="String"  />
     <aura:attribute name="flowId" type="String" />
     <aura:attribute name="flowVersionId" type="String" />
+    <aura:attribute name="sessionId" type="String" />
+    <aura:attribute name="sessionUrl" type="String"/>
     <aura:attribute name="navigationElementId" type="String" />
-    <aura:attribute name="userInfo" type="ManyWhoUserInfo" />
     <aura:attribute name="mode" type="String" default="" />
     <aura:attribute name="reportingMode" type="String" default="" />
     <aura:attribute name="collaborationIsEnabled" type="Boolean" />
     <aura:attribute name="navigationIsFixed" type="Boolean" />
     <aura:attribute name="navigationIsWizard" type="Boolean" />
     <aura:attribute name="collapsible" type="Boolean" />
+    <aura:attribute name="scriptLoaded" type="Boolean" default="false"/>
+    <aura:attribute name="sessionLoaded" type="Boolean" default="false"/>
     <aura:attribute name="stateId" type="String" />
     <aura:attribute name="objectId" type="String" />
     <aura:attribute name="objectName" type="String" />
+    <aura:attribute name="provideSessionInfo" type="String" default="true" />
+    <aura:attribute name="visualforceHostPreview" type="String" default="orgexampleurl-dev-ed--c.eu11.visual.force.com" />
+    <aura:attribute name="visualforceHostProd" type="String" default="communityurl-developer-edition.eu11.force.com" />
+    <aura:attribute name="lightningOriginPreview" type="String" default="orgexampleurl-dev-ed--livepreview.eu11.force.com" />
+    <aura:attribute name="communityName" type="String" default="Default Name" />
+    <aura:attribute name="persistUrl" type="Boolean" default="false" /> 
     <ltng:require scripts="/resource/manywho_flow/js/vendor/jquery-2.1.4.min.js,
                            /resource/manywho_flow/js/vendor/bootstrap-3.3.6.min.js,
                            /resource/manywho_flow/js/vendor/react-0.14.6.min.js,
@@ -23,12 +33,17 @@
                            /resource/manywho_flow/js/vendor/moment-with-locales-2.10.6.min.js,
                            /resource/manywho_flow/js/vendor/loglevel-1.4.0.min.js,
                            /resource/manywho_flow/js/manywho/init.js,
-                           /resource/manywho_flow/js/manywho/compiled-6fbefb4c67.js"
-                  styles="/resource/manywho_flow/css/manywho/mw-bootstrap-2d0a35d387.css,
-                          /resource/manywho_flow/css/manywho/compiled-a5f8d32268.css,
+                           /resource/manywho_flow/js/manywho/ui-core-2402342f7b.js,
+                  			/resource/manywho_flow/js/manywho/ui-bootstrap-02e5a1d0f3.js"
+                  styles="/resource/manywho_flow/css/manywho/mw-bootstrap-21044ea06e.css,
+                          /resource/manywho_flow/css/manywho/ui-bootstrap-39f95ae7f5.css,
                           /resource/manywho_flow/css/themes/mw-sf1.css"
                   afterScriptsLoaded="{!c.afterScriptsLoaded}"/>
     <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+    <iframe aura:id="visualforceFrame" 
+            src="{!'https://' + v.visualforceHostPreview + '/apex/ManyWhoFlowUserSession?community-name='+ v.communityName + '&amp;lightning-origin-prod=' + v.visualforceHostProd + '&amp;lightning-origin-preview=' + v.lightningOriginPreview}" 
+            style="width:0;height:0;border:0; border:none;"/>
     
     <div id="manywho">
         <div id="loader" style="width: 100%; height: 100%; background: black; opacity: 1;">
@@ -41,12 +56,12 @@
     </div>
 
     <div id="manywho-lightning-settings" 
-         data-tenant-id="{!v.userInfo.tenantId}" 
+         data-tenant-id="{!v.tenantId}" 
          data-flow-id="{!v.flowId}"
          data-flow-version-id="{!v.flowVersionId}"
          data-navigation-element-id="{!v.navigationElementId}"
-         data-session-token="{!v.userInfo.sessionId}"
-         data-session-url="{!v.userInfo.sessionUrl}"
+         data-session-token="{!v.sessionId}"
+         data-session-url="{!v.sessionUrl}"
          data-mode="{!v.mode}"
          data-reporting-mode="{!v.reportingMode}"
          data-collaboration-is-enabled="{!v.collaborationIsEnabled}"
