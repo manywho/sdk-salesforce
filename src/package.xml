@@ -30,6 +30,7 @@
     </types>
     <types>
         <members>ManyWhoFlow__c</members>
+        <members>ManyWho__c</members>
         <name>CustomObject</name>
     </types>
     <types>
