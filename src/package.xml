@@ -5,11 +5,11 @@
         <name>ApexClass</name>
     </types>
     <types>
-        <members>flow</members>
+        <members>*</members>
         <name>ApexPage</name>
     </types>
     <types>
-        <members>ManyWho</members>
+        <members>*</members>
         <name>CustomApplication</name>
     </types>
     <types>
