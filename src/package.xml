@@ -1,24 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <types>
-        <members>ManyWhoAPI</members>
-        <members>ManyWhoAPI_Tests</members>
-        <members>ManyWhoCurrentUserController</members>
-        <members>ManyWhoCurrentUserController_Tests</members>
-        <members>ManyWhoFlowController</members>
-        <members>ManyWhoFlowController_Tests</members>
-        <members>ManyWhoHttp</members>
-        <members>ManyWhoHttpMock</members>
-        <members>ManyWhoHttpMock_Tests</members>
-        <members>ManyWhoHttp_Tests</members>
-        <members>ManyWhoObjectUtils</members>
-        <members>ManyWhoObjectUtils_Tests</members>
-        <members>ManyWhoReportingService</members>
-        <members>ManyWhoReportingService_Tests</members>
-        <members>ManyWhoRun</members>
-        <members>ManyWhoUserInfo</members>
-        <members>ManyWhoUserInfo_Tests</members>
-        <members>ManyWhoFlowUserSessionController</members>
+        <members>*</members>
         <name>ApexClass</name>
     </types>
     <types>
@@ -38,9 +21,7 @@
         <name>CustomTab</name>
     </types>
     <types>
-        <members>ManyWho</members>
-        <members>SalesforceService</members>
-        <members>SalesforceStagingService</members>
+        <members>*</members>
         <name>RemoteSiteSetting</name>
     </types>
     <types>
