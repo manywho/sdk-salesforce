@@ -1,4 +1,4 @@
-<design:component label="ManyWho Flow">
+<design:component label="ManyWho Flow Transition">
     <design:attribute name="tenantId" label="Tenant Id" description="The unique identifier of the tenant owner of the flow" />
     <design:attribute name="flowId" label="Flow Id" description="The unique identifier of the Flow" />
     <design:attribute name="flowVersionId" label="Flow Version Id" description="The unique identifier of the Flow Version" />
