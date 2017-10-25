@@ -2,9 +2,12 @@ var manywho = {
     cdnUrl: 'https://assets.manywho.com',
     customResources: null,
     initialize: function () {
-
+		console.log("provide-session-info: "+$('#manywho-lightning-settings').data('provide-session-info'));
+		console.log("session-token: "+$('#manywho-lightning-settings').data('session-token'));
+		console.log("session-url: "+$('#manywho-lightning-settings').data('session-url'));
+		
         var queryParameters = manywho.utils.parseQueryString(window.location.search.substring(1));
-
+		
         manywho.settings.initialize({
             adminTenantId: 'da497693-4d02-45db-bc08-8ea16d2ccbdf',
             playerUrl: [ location.protocol, '//', location.host, location.pathname ].join(''),
@@ -43,10 +46,12 @@ var manywho = {
         var salesforceSessionUrl = null;
         
         // Only send the session information if configured to do so
-        if (manywho.utils.isEqual('true', $('#manywho-lightning-settings').data('provide-session-info'), true)) {
+		//console.log($('#manywho-lightning-settings').data('provide-session-info'));
+        
+		//if (manywho.utils.isEqual('true', $('#manywho-lightning-settings').data('provide-session-info').toString(), true)) {
         	salesforceSessionId = $('#manywho-lightning-settings').data('session-token');
         	salesforceSessionUrl = $('#manywho-lightning-settings').data('session-url');
-        }
+        //}
         
         var options = {
             authentication: {
@@ -70,7 +75,11 @@ var manywho = {
             collapsible: manywho.utils.isEqual('true', $('#manywho-lightning-settings').data('collapsible'), true)
         };
 
-        manywho.engine.initialize(
+		console.log("tenant-id" + $('#manywho-lightning-settings').data('tenant-id'));
+		console.log("tenant-id" + $('#manywho-lightning-settings').data('flow-id'));
+		console.log("tenant-id" + $('#manywho-lightning-settings').data('flow-version-id'));
+        
+		manywho.engine.initialize(
             $('#manywho-lightning-settings').data('tenant-id'),
             $('#manywho-lightning-settings').data('flow-id'),
             $('#manywho-lightning-settings').data('flow-version-id'),

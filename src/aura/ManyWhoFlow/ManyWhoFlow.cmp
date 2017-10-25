@@ -23,9 +23,10 @@
                            /resource/manywho_flow/js/vendor/moment-with-locales-2.10.6.min.js,
                            /resource/manywho_flow/js/vendor/loglevel-1.4.0.min.js,
                            /resource/manywho_flow/js/manywho/init.js,
-                           /resource/manywho_flow/js/manywho/compiled-6fbefb4c67.js"
-                  styles="/resource/manywho_flow/css/manywho/mw-bootstrap-2d0a35d387.css,
-                          /resource/manywho_flow/css/manywho/compiled-a5f8d32268.css,
+                           /resource/manywho_flow/js/manywho/ui-core-2402342f7b.js,
+                           /resource/manywho_flow/js/manywho/ui-bootstrap-02e5a1d0f3.js"
+                  styles="/resource/manywho_flow/css/manywho/mw-bootstrap-21044ea06e.css,
+                          /resource/manywho_flow/css/manywho/ui-bootstrap-39f95ae7f5.css,
                           /resource/manywho_flow/css/themes/mw-sf1.css"
                   afterScriptsLoaded="{!c.afterScriptsLoaded}"/>
     <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
