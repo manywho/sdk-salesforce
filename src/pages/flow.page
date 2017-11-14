@@ -320,7 +320,7 @@
                 var options = {
                     authentication: {
                         sessionId: '{!$Api.Session_ID}',
-                        sessionUrl: '{!$Api.Partner_Server_URL_260}'
+                        sessionUrl: '{!$Api.Partner_Server_URL_390}'
                     },
                     navigationElementId: queryParameters['navigation-element-id'],
                     mode: null,
