@@ -1,29 +1,29 @@
 <aura:component controller="ManyWhoFlowUserSessionController"
                 implements="forceCommunity:availableForAllPageTypes,force:hasRecordId" 
                 access="global">
-    <aura:attribute name="tenantId" type="String"  />
-    <aura:attribute name="flowId" type="String" />
-    <aura:attribute name="flowVersionId" type="String" />
-    <aura:attribute name="sessionId" type="String" />
+    <aura:attribute name="tenantId" type="String" access='global'/>
+    <aura:attribute name="flowId" type="String" access='global'/>
+    <aura:attribute name="flowVersionId" type="String" access='global'/>
+    <aura:attribute name="sessionId" type="String"/>
     <aura:attribute name="sessionUrl" type="String"/>
-    <aura:attribute name="navigationElementId" type="String" />
-    <aura:attribute name="mode" type="String" default="" />
-    <aura:attribute name="reportingMode" type="String" default="" />
-    <aura:attribute name="collaborationIsEnabled" type="Boolean" />
-    <aura:attribute name="navigationIsFixed" type="Boolean" />
-    <aura:attribute name="navigationIsWizard" type="Boolean" />
-    <aura:attribute name="collapsible" type="Boolean" />
+    <aura:attribute name="navigationElementId" type="String" access='global'/>
+    <aura:attribute name="mode" type="String" default=""  access='global'/>
+    <aura:attribute name="reportingMode" type="String" default="" access='global'/>
+    <aura:attribute name="collaborationIsEnabled" type="Boolean" access='global'/>
+    <aura:attribute name="navigationIsFixed" type="Boolean" access='global'/>
+    <aura:attribute name="navigationIsWizard" type="Boolean" access='global'/>
+    <aura:attribute name="collapsible" type="Boolean" access='global'/>
     <aura:attribute name="scriptLoaded" type="Boolean" default="false"/>
     <aura:attribute name="sessionLoaded" type="Boolean" default="false"/>
     <aura:attribute name="stateId" type="String" />
     <aura:attribute name="objectId" type="String" />
     <aura:attribute name="objectName" type="String" />
     <aura:attribute name="provideSessionInfo" type="String" default="true" />
-    <aura:attribute name="visualforceHostPreview" type="String" default="orgexampleurl-dev-ed--c.eu11.visual.force.com" />
-    <aura:attribute name="visualforceHostProd" type="String" default="communityurl-developer-edition.eu11.force.com" />
-    <aura:attribute name="lightningOriginPreview" type="String" default="orgexampleurl-dev-ed--livepreview.eu11.force.com" />
-    <aura:attribute name="communityName" type="String" default="Default Name" />
-    <aura:attribute name="persistUrl" type="Boolean" default="false" /> 
+    <aura:attribute name="visualforceHostPreview" type="String" default="orgexampleurl-dev-ed--c.eu11.visual.force.com"  access='global'/>
+    <aura:attribute name="visualforceHostProd" type="String" default="communityurl-developer-edition.eu11.force.com"  access='global'/>
+    <aura:attribute name="lightningOriginPreview" type="String" default="orgexampleurl-dev-ed--livepreview.eu11.force.com" access='global'/>
+    <aura:attribute name="communityName" type="String" default="Default Name" access='global'/>
+    <aura:attribute name="persistUrl" type="Boolean" default="false" access='global'/> 
     <ltng:require scripts="/resource/manywho_flow/js/vendor/jquery-2.1.4.min.js,
                            /resource/manywho_flow/js/vendor/bootstrap-3.3.6.min.js,
                            /resource/manywho_flow/js/vendor/react-0.14.6.min.js,
