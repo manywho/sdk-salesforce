@@ -19,7 +19,7 @@ public with sharing class ManyWhoFlowUserSessionController {
     public String getLightningOriginProd() {
         return 'https://' + lightningOriginProd;
     }
-    
+    	
     public String getLightningOriginPreview() { 
         return 'https://' + lightningOriginPreview;
     }
