@@ -1,3 +1,4 @@
+@isTest
 global class ManyWhoHttpMock implements HttpCalloutMock {
     private String json;
     
