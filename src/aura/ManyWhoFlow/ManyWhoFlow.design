@@ -1,9 +1,16 @@
 <design:component label="ManyWho Flow">
+    <design:attribute name="tenantId" label="Tenant Id" description="The unique identifier of the tenant owner of the flow" />
     <design:attribute name="flowId" label="Flow Id" description="The unique identifier of the Flow" />
+    <design:attribute name="flowVersionId" label="Flow Version Id" description="The unique identifier of the Flow Version" />
     <design:attribute name="navigationElementId" label="Navigation Element Id" description="(Optional) Use if you have more than one Navigation and wish to explicitly define the Navigation to use for this instance of the component" />
     <design:attribute name="mode" label="Debug Mode" datasource=",DEBUG,DEBUG_STEPTHROUGH" default="" description="(Optional) Use if you want to debug the Flow" />
     <design:attribute name="reportingMode" label="Reporting Mode" datasource=",PATH,VALUES,PATH_AND_VALUES" default="" description="(Optional) Use if you want to enable reporting and have configured Apex REST to receive the data" />
     <design:attribute name="navigationIsWizard" label="Show Navigation as Chevrons" description="The Navigation can be shown as a menu (default) or as chevrons" />
     <design:attribute name="collaborationIsEnabled" label="Enable Realtime Collaboration" description="ManyWho pages can support realtime co-edit and co-navigation, however LockerService will disable this feature" />
     <design:attribute name="collapsible" label="Enable Collapsible Containers" description="Determines if a user can collapse labelled Containers in your Page Layouts" />
+    <design:attribute name="visualforceHostProd" label="Visual Force Host Production" description="This URL can be found at the 'All Communities' section (the field 'URL')" />
+    <design:attribute name="visualforceHostPreview" label="Visual Force Host Preview" description="This URL is the same that you get if you open a visualforce page and click on preview" />
+    <design:attribute name="lightningOriginPreview" label="Lightning Origin Preview" description="This URL will be similar to the 'Visual Force Host Preview', but changin 'c' by 'livepreview' and removing the word 'visual'" />
+    <design:attribute name="communityName" label="Community Name" description="Community Name" />
+    <design:attribute name="persistUrl" label="Persist the url's" description="Persist the url's" />
 </design:component>
