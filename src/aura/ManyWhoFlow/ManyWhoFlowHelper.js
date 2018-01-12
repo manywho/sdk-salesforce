@@ -35,9 +35,8 @@
         if (!$A.util.isUndefined(cmp.get("v.persistUrl")) && cmp.get("v.persistUrl")) {
         	var action = cmp.get("c.saveDomains");
         	action.setParams({ 
-                communityName : cmp.get("v.communityName"), 
-                lightningOriginPreview: cmp.get("v.lightningOriginPreview"), 
-                lightningOriginProd: cmp.get("v.visualforceHostProd")
+                communityName : cmp.get("v.communityName"),  
+                lightningOriginProd: cmp.get("v.lightningOriginPreview")
             });
         	
             action.setCallback(this, function(response) {

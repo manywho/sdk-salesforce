@@ -9,7 +9,6 @@
     
 	if ({!valid}) {
         sendToLightning("{!lightningOriginProd}");
-    	sendToLightning("{!lightningOriginPreview}");
     }
 </script>
 </apex:page>

@@ -8,9 +8,8 @@
     <design:attribute name="navigationIsWizard" label="Show Navigation as Chevrons" description="The Navigation can be shown as a menu (default) or as chevrons" />
     <design:attribute name="collaborationIsEnabled" label="Enable Realtime Collaboration" description="ManyWho pages can support realtime co-edit and co-navigation, however LockerService will disable this feature" />
     <design:attribute name="collapsible" label="Enable Collapsible Containers" description="Determines if a user can collapse labelled Containers in your Page Layouts" />
-    <design:attribute name="visualforceHostProd" label="Visual Force Host Production" description="This URL can be found at the 'All Communities' section (the field 'URL')" />
-    <design:attribute name="visualforceHostPreview" label="Visual Force Host Preview" description="This URL is the same that you get if you open a visualforce page and click on preview" />
-    <design:attribute name="lightningOriginPreview" label="Lightning Origin Preview" description="This URL will be similar to the 'Visual Force Host Preview', but changin 'c' by 'livepreview' and removing the word 'visual'" />
+    <design:attribute name="visualforceHostProd" label="Visual Force Host" description="You can find this URL by searching for a Visualforce page called 'BoomiFlowSDK__ManyWhoFlowUserSession', selecting 'Preview', then by copying the domain, without the protocol (e.g. 'yourorg-dev-ed--yourprefix.serverprefix.visual.force.com')" />
+    <design:attribute name="lightningOriginPreview" label="Lightning Origin" description="This domain can be found in the 'URL' field inside the 'All Communities' section, with the protocol removed (i.e. remove 'http://' or 'https://')" />
     <design:attribute name="communityName" label="Community Name" description="Community Name" />
     <design:attribute name="persistUrl" label="Persist the url's" description="Persist the url's" />
 </design:component>
