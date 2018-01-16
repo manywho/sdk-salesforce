@@ -1,11 +1,11 @@
-public class ManyWhoFlowController {
+global class ManyWhoFlowController {
 
     private ManyWhoFlow__c[] manywhoflows;
 
-    public String stateId { get; set; }
-    public String tenantId { get; set; }
+    global String stateId { get; set; }
+    global String tenantId { get; set; }
 
-    public ManyWhoFlowController(ApexPages.StandardController stdController) {
+    global ManyWhoFlowController(ApexPages.StandardController stdController) {
         String id;
 
         // Get the id if that exists

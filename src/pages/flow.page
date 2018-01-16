@@ -3,11 +3,34 @@
     <link rel="stylesheet" href="{!URLFOR($Resource.manywho_flow,'css/manywho/compiled-a5f8d32268.css')}" />
     <link rel="stylesheet" href="{!URLFOR($Resource.manywho_flow,'css/themes/mw-sf1.css')}" />
     <style type="text/css">
+    
+    
+        /****************************************************************************************************************************
+        * This page is part of a managed package, it can not be modified. But you can copy and paste the content of this page into a
+        * new Visual Force page.
+        * 
+        * The $Resource.manywho_flow will not be found because it is under a Namespace,  to fix this problem you need to add the 
+        * namespace to each reference of the static resource ($Resource.manywho_flow)
+        *
+        * e.g:
+        *
+        * <link rel="stylesheet" href="{!URLFOR($Resource.manywho_flow,'css/manywho/mw-bootstrap-2d0a35d387.css')}" />
+        *
+        * it becomes:
+        *
+        * <link rel="stylesheet" href="{!URLFOR($Resource.BoomiFlowSDK__manywho_flow,'css/manywho/mw-bootstrap-2d0a35d387.css')}" />
+        *
+        * If you need to know more about the license please refer to the repository https://github.com/manywho/sdk-salesforce
+        * 
+        *****************************************************************************************************************************/
+    
         
         /***********************************************************************************
+        * Advice for unmanged package
+        *
         * DO NOT EDIT THIS PAGE!!!
         * If you want to change this code, clone the Visualforce page and make changes in 
-        * the clone. Otherwise if or when you redeploy the ManyWho Salesforce SDK you ll 
+        * the clone. Otherwise if or when you redeploy the Boomi Flow Salesforce SDK you ll 
         * lose everything you ve built. That will really suck.
         *
         * YOU HAVE BEEN WARNED!!! :)

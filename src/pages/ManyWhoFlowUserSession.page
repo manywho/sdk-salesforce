@@ -7,7 +7,7 @@
         }), origin);
     }
     
-	if ({!valid}) {
+    if ("{!valid}") {
         sendToLightning("{!lightningOriginProd}");
     }
 </script>
