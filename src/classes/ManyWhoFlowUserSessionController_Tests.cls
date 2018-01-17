@@ -7,7 +7,7 @@ public class ManyWhoFlowUserSessionController_Tests {
     
      public static testMethod void myUnitTestLightningOriginProd() {
         ManyWhoFlowUserSessionController sessionController = new ManyWhoFlowUserSessionController();
-        System.assertEquals('https://null', sessionController.getLightningOriginProd());
+        System.assertEquals('https://null', sessionController.getLightningOrigin());
     }
     
      public static testMethod void myUnitTestGetValid() {
@@ -17,10 +17,10 @@ public class ManyWhoFlowUserSessionController_Tests {
     
     public static testMethod void myUnitTestGetValidCommunites() {
         Test.setCurrentPageReference(new PageReference('Page.myPage'));
-        System.currentPageReference().getParameters().put('lightning-origin-prod', 'lightningOriginProd');
+        System.currentPageReference().getParameters().put('lightning-origin', 'lightningOriginProd');
         System.currentPageReference().getParameters().put('community-name', 'communityName');
         
-        ManyWhoCommunity__c manyWhoCommunity = new ManyWhoCommunity__c(Name='communityName', LightningOriginProd__c='lightningOriginProd' );
+        ManyWhoCommunity__c manyWhoCommunity = new ManyWhoCommunity__c(Name='communityName', LightningOrigin__c='lightningOriginProd' );
         insert manyWhoCommunity;
         
         ManyWhoFlowUserSessionController sessionController = new ManyWhoFlowUserSessionController();

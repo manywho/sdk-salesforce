@@ -8,7 +8,7 @@
     }
     
     if ("{!valid}") {
-        sendToLightning("{!lightningOriginProd}");
+        sendToLightning("{!lightningOrigin}");
     }
 </script>
 </apex:page>

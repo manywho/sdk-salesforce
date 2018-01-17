@@ -1,15 +1,14 @@
-<design:component label="ManyWho Flow">
-    <design:attribute name="tenantId" label="Tenant Id" description="The unique identifier of the tenant owner of the flow" />
-    <design:attribute name="flowId" label="Flow Id" description="The unique identifier of the Flow" />
-    <design:attribute name="flowVersionId" label="Flow Version Id" description="The unique identifier of the Flow Version" />
-    <design:attribute name="navigationElementId" label="Navigation Element Id" description="(Optional) Use if you have more than one Navigation and wish to explicitly define the Navigation to use for this instance of the component" />
-    <design:attribute name="mode" label="Debug Mode" datasource=",DEBUG,DEBUG_STEPTHROUGH" default="" description="(Optional) Use if you want to debug the Flow" />
-    <design:attribute name="reportingMode" label="Reporting Mode" datasource=",PATH,VALUES,PATH_AND_VALUES" default="" description="(Optional) Use if you want to enable reporting and have configured Apex REST to receive the data" />
-    <design:attribute name="navigationIsWizard" label="Show Navigation as Chevrons" description="The Navigation can be shown as a menu (default) or as chevrons" />
-    <design:attribute name="collaborationIsEnabled" label="Enable Realtime Collaboration" description="ManyWho pages can support realtime co-edit and co-navigation, however LockerService will disable this feature" />
-    <design:attribute name="collapsible" label="Enable Collapsible Containers" description="Determines if a user can collapse labelled Containers in your Page Layouts" />
-    <design:attribute name="visualforceHostProd" label="Visual Force Host" description="You can find this URL by searching for a Visualforce page called 'BoomiFlowSDK__ManyWhoFlowUserSession', selecting 'Preview', then by copying the domain, without the protocol (e.g. 'yourorg-dev-ed--yourprefix.serverprefix.visual.force.com')" />
-    <design:attribute name="lightningOriginPreview" label="Lightning Origin" description="This domain can be found in the 'URL' field inside the 'All Communities' section, with the protocol removed (i.e. remove 'http://' or 'https://')" />
-    <design:attribute name="communityName" label="Community Name" description="Community Name" />
-    <design:attribute name="persistUrl" label="Persist the url's" description="Persist the url's" />
+<design:component label="Boomi Flow">
+    <design:attribute name="tenantId" label="tenant ID" description="The ID of the tenant owner of the flow" />
+    <design:attribute name="flowId" label="flow ID" description="The ID of the flow" />
+    <design:attribute name="flowVersionId" label="flow version ID" description="The ID of the flow version" />
+    <design:attribute name="navigationElementId" label="navigation element ID" description="(Optional) Use if you have more than one Navigation and wish to explicitly define the Navigation to use for this instance of the component" />
+    <design:attribute name="mode" label="debug mode" datasource=",DEBUG,DEBUG_STEPTHROUGH" default="" description="(Optional) Use if you want to debug the Flow" />
+    <design:attribute name="reportingMode" label="reporting mode" datasource=",PATH,VALUES,PATH_AND_VALUES" default="" description="(Optional) Use if you want to enable reporting and have configured Apex REST to receive the data" />
+    <design:attribute name="navigationIsWizard" label="show navigation as chevrons" description="The Navigation can be shown as a menu (default) or as chevrons" />
+    <design:attribute name="collaborationIsEnabled" label="enable realtime collaboration" description="ManyWho pages can support realtime co-edit and co-navigation, however LockerService will disable this feature" />
+    <design:attribute name="collapsible" label="enable collapsible containers" description="Determines if a user can collapse labelled Containers in your Page Layouts" />
+    <design:attribute name="visualforceHostname" label="Visualforce hostname" description="You can find this URL by searching for a Visualforce page called 'BoomiFlowSDK__ManyWhoFlowUserSession', selecting 'Preview', then by copying the domain, without the protocol (e.g. 'yourorg-dev-ed--yourprefix.serverprefix.visual.force.com')" />
+    <design:attribute name="lightningOrigin" label="Lightning origin" description="This domain can be found in the 'URL' field inside the 'All Communities' section, with the protocol removed (i.e. remove 'http://' or 'https://')" />
+    <design:attribute name="communityName" label="community name" description="Community name" />
 </design:component>

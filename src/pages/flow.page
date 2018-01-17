@@ -1,55 +1,55 @@
 <apex:page standardController="ManyWhoFlow__c" extensions="ManyWhoFlowController">
-    <link rel="stylesheet" href="{!URLFOR($Resource.manywho_flow,'css/manywho/mw-bootstrap-2d0a35d387.css')}" />
-    <link rel="stylesheet" href="{!URLFOR($Resource.manywho_flow,'css/manywho/compiled-a5f8d32268.css')}" />
+    <link rel="stylesheet" href="{!URLFOR($Resource.manywho_flow,'css/mw-bootstrap-21044ea06e.css')}" />
     <link rel="stylesheet" href="{!URLFOR($Resource.manywho_flow,'css/themes/mw-sf1.css')}" />
+    <link rel="stylesheet" href="{!URLFOR($Resource.manywho_flow,'css/themes/mw-paper.css')}" />
+    <link rel="stylesheet" href="{!URLFOR($Resource.manywho_flow,'css/ui-bootstrap-61e8109445.css')}" />
+
+    <apex:includeScript value="{!URLFOR($Resource.manywho_flow,'js/vendor/jquery-2.1.4.min.js')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.manywho_flow,'js/vendor/bootstrap-3.3.6.min.js')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.manywho_flow,'js/vendor/react-0.14.6.min.js')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.manywho_flow,'js/vendor/react-dom-0.14.6.min.js')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.manywho_flow,'js/vendor/socket.io-1.4.5.js')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.manywho_flow,'js/vendor/chosen.jquery-1.4.2.min.js')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.manywho_flow,'js/vendor/moment-with-locales-2.10.6.min.js')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.manywho_flow,'js/vendor/loglevel-1.4.0.min.js')}"/>
     <style type="text/css">
-    
-    
+
+
         /****************************************************************************************************************************
         * This page is part of a managed package, it can not be modified. But you can copy and paste the content of this page into a
         * new Visual Force page.
-        * 
-        * The $Resource.manywho_flow will not be found because it is under a Namespace,  to fix this problem you need to add the 
+        *
+        * The $Resource.manywho_flow will not be found because it is under a Namespace,  to fix this problem you need to add the
         * namespace to each reference of the static resource ($Resource.manywho_flow)
         *
-        * e.g:
-        *
-        * <link rel="stylesheet" href="{!URLFOR($Resource.manywho_flow,'css/manywho/mw-bootstrap-2d0a35d387.css')}" />
-        *
-        * it becomes:
-        *
-        * <link rel="stylesheet" href="{!URLFOR($Resource.BoomiFlowSDK__manywho_flow,'css/manywho/mw-bootstrap-2d0a35d387.css')}" />
-        *
-        * If you need to know more about the license please refer to the repository https://github.com/manywho/sdk-salesforce
-        * 
         *****************************************************************************************************************************/
-    
-        
+
+
         /***********************************************************************************
-        * Advice for unmanged package
+        * Advice for un-manged package
         *
         * DO NOT EDIT THIS PAGE!!!
-        * If you want to change this code, clone the Visualforce page and make changes in 
-        * the clone. Otherwise if or when you redeploy the Boomi Flow Salesforce SDK you ll 
+        * If you want to change this code, clone the Visualforce page and make changes in
+        * the clone. Otherwise if or when you redeploy the Boomi Flow Salesforce SDK you ll
         * lose everything you ve built. That will really suck.
         *
         * YOU HAVE BEEN WARNED!!! :)
         ***********************************************************************************/
-        
+
         body {
             padding: 0px !important;
             margin: 0px !important;
             height: 100% !important;
         }
-        
+
         #contentWrapper{
             overflow-x: hidden;
         }
-        
+
         ul, li {
             margin-left: 0px !important;
         }
-        
+
         .mw-bs .wait-container {
             position: absolute;
             top: 0;
@@ -60,7 +60,7 @@
             z-index: 1100;
             background-color: rgba(255, 255, 255, 0.5);
         }
-        
+
         .mw-bs .wait-spinner
         {
             content: url({!URLFOR($Resource.manywho_flow,'images/manywholightningwaitgif.gif')});
@@ -77,11 +77,11 @@
             -webkit-animation: none;
             animation: none;
         }
-        
+
         .mw-bs .status > .wait-spinner {
             content:url({!URLFOR($Resource.manywho_flow,'images/manywhogreentick.png')}) !important;
         }
-        
+
         .mw-bs .wait-spinner-small
         {
             content: url({!URLFOR($Resource.manywho_flow,'images/manywholightningwaitgif.gif')});
@@ -89,14 +89,14 @@
             height: 20px;
             margin:-10px 0 0 -10px
         }
-        
+
         .mw-bs .wait-spinner + .wait-message {
             display: block;
             position: relative;
             top: 45%;
             text-align: center;
         }
-        
+
         .mw-bs {
             margin-top: 10px !important;
         }
@@ -126,11 +126,11 @@
             margin-top: 0px !important;
             display: block !important;
         }
-        
+
         .mw-bs div.mw-container {
             padding-left: 0px !important;
         }
-        
+
         .mw-bs .btn > .glyphicon {
             color: rgb(0, 0, 0) !important;
         }
@@ -144,45 +144,45 @@
         }
 
         .mw-bs .navbar-chevrons {
-          all: initial;
-          * {
+            all: initial;
+        * {
             all: unset;
-          }
         }
-        
+        }
+
         .mw-bs .navbar-chevrons > ul {
-          all: initial;
-          * {
+            all: initial;
+        * {
             all: unset;
-          }
         }
-        
+        }
+
         .mw-bs .navbar-chevrons > ul > li {
-          all: initial;
-          * {
+            all: initial;
+        * {
             all: unset;
-          }
         }
-        
+        }
+
         .mw-bs .navbar-chevrons > ul > li > a {
-          all: initial;
-          * {
+            all: initial;
+        * {
             all: unset;
-          }
         }
-        
+        }
+
         .mw-bs .navbar-chevrons > ul > li > a:before {
-          all: initial;
-          * {
+            all: initial;
+        * {
             all: unset;
-          }
         }
-        
+        }
+
         .mw-bs .navbar-chevrons > ul > li > a:after {
-          all: initial;
-          * {
+            all: initial;
+        * {
             all: unset;
-          }
+        }
         }
 
         .mw-bs .navbar-chevrons {
@@ -197,15 +197,15 @@
             text-align: center;
             padding: 12px 15px 0 25px;
             position: relative;
-            margin: 0 3px 0 0;             
+            margin: 0 3px 0 0;
             font-size: 14px;
             text-decoration: none;
             color: #fff;
             font-family: ProximaNovaSoft-Regular,Calibri,"Gill Sans","Gill Sans MT",Candara,Segoe,"Segoe UI",Arial,sans-serif;
         }
-        
+
         .mw-bs .navbar-chevrons ul li a:after {
-            content: "";  
+            content: "";
             border-top: 20px solid transparent;
             border-bottom: 20px solid transparent;
             border-left: 20px solid rgb(75, 202, 129);
@@ -216,7 +216,7 @@
         .mw-bs .navbar-chevrons ul li.active a {
             background: rgb(0, 112, 210);
         }
-        
+
         .mw-bs .navbar-chevrons ul li.active a:after {
             border-left: 20px solid rgb(0, 112, 210);
         }
@@ -231,7 +231,7 @@
         }
 
         .mw-bs .navbar-chevrons ul li a:before {
-            content: "";  
+            content: "";
             border-top: 20px solid transparent;
             border-bottom: 20px solid transparent;
             border-left: 20px solid #ffffff;
@@ -242,19 +242,19 @@
             border-top-left-radius: 10px; border-bottom-left-radius: 10px;
         }
         .mw-bs .navbar-chevrons ul li:first-child a:before {
-            display: none; 
+            display: none;
         }
-        
+
         .mw-bs .navbar-chevrons ul li:last-child a {
             padding-right: 30px;
             border-top-right-radius: 10px; border-bottom-right-radius: 10px;
         }
         .mw-bs .navbar-chevrons ul li:last-child a:after {
-            display: none; 
+            display: none;
         }
-        
+
     </style>
-    
+
     <div class="mw-bs">
         <div id="manywho" style="width: 100%; height: 100%;">
             <div id="loader" class="mw-bs" style="width: 100%; height: 100%;">
@@ -265,30 +265,21 @@
             </div>
         </div>
     </div>
-    
-    <script src="{!URLFOR($Resource.manywho_flow,'js/vendor/jquery-2.1.4.min.js')}"></script>
-    <script src="{!URLFOR($Resource.manywho_flow,'js/vendor/bootstrap-3.3.6.min.js')}"></script>
-    <script src="{!URLFOR($Resource.manywho_flow,'js/vendor/react-0.14.6.min.js')}"></script>
-    <script src="{!URLFOR($Resource.manywho_flow,'js/vendor/react-dom-0.14.6.min.js')}"></script>
-    <script src="{!URLFOR($Resource.manywho_flow,'js/vendor/socket.io-1.4.5.js')}"></script>
-    <script src="{!URLFOR($Resource.manywho_flow,'js/vendor/chosen.jquery-1.4.2.min.js')}"></script>
-    <script src="{!URLFOR($Resource.manywho_flow,'js/vendor/moment-with-locales-2.10.6.min.js')}"></script>
-    <script src="{!URLFOR($Resource.manywho_flow,'js/vendor/loglevel-1.4.0.min.js')}"></script>
-    
+
     <apex:includeScript value="/support/console/37.0/integration.js"/>
-        
+
     <script>
-                
+
         function grabStateId() {
             var stateId = null;
-            
+
             if ('{!stateId}'.trim().length > 0) {
                 stateId = '{!stateId}';
             }
-                        
+
             return stateId;
         }
-            
+
         var manywho = {
             cdnUrl: 'https://assets.manywho.com',
             customResources: [
@@ -299,13 +290,13 @@
 
                 var queryParameters = manywho.utils.parseQueryString(window.location.search.substring(1));
                 var stateId = grabStateId();
-                
+
                 // If we have the join uri explicitly, we use that
                 if (queryParameters['join'] != null &&
                     queryParameters['join'].trim().length > 0) {
                     stateId = queryParameters['join'];
                 }
-                                                                                
+
                 manywho.settings.initialize({
                     adminTenantId: 'da497693-4d02-45db-bc08-8ea16d2ccbdf',
                     playerUrl: [ location.protocol, '//', location.host, location.pathname ].join(''),
@@ -314,10 +305,10 @@
                         uri: 'https://flow.manywho.com'
                     }
                 });
-                
+
                 // Pass input values into the page if they have been provided
                 var inputValues = null;
-                
+
                 if (queryParameters['object-id'] != null &&
                     queryParameters['object-id'].trim().length > 0) {
                     inputValues = [];
@@ -327,7 +318,7 @@
                         'contentValue': queryParameters['object-id'],
                     });
                 }
-                
+
                 if (queryParameters['object-name'] != null &&
                     queryParameters['object-name'].trim().length > 0) {
                     if (inputValues == null) {
@@ -339,7 +330,7 @@
                         'contentValue': queryParameters['object-name'],
                     });
                 }
-                
+
                 var options = {
                     authentication: {
                         sessionId: '{!$Api.Session_ID}',
@@ -363,16 +354,16 @@
                     },
                     isFullWidth: true
                 };
-                
+
                 var tenantId = '{!tenantId}';
                 var flowId = queryParameters['flow-id'];
-                
+
                 // If the tenant id has not be changed, we load the default Flow
                 if (tenantId.trim().length == 0) {
                     tenantId = '1ae14654-0699-401f-aaf6-f0adbb5418c8';
                     flowId = '0fabfe3a-3226-4288-8ea0-be69bb9cb612';
                 }
-                                
+
                 manywho.engine.initialize(
                     tenantId,
                     flowId,
@@ -387,7 +378,9 @@
         };
     </script>
 
-    <script type="text/javascript" src="https://assets.manywho.com/js/compiled-6fbefb4c67.js"></script>
+    <script type="text/javascript" src="https://assets.manywho.com/js/ui-core-bb6dd86fe6.js"></script>
+    <script type="text/javascript" src="https://assets.manywho.com/js/ui-bootstrap-d08f705b26.js"></script>
+
 
     <script>
         (function (manywho, window, $) {
@@ -422,25 +415,25 @@
                     var loadedScriptCount = 0;
                     if (scripts.length > 0) {
                         scripts.forEach(function(url, index, scripts) {
-             
+
                             appendScript(url, function() {
-             
+
                                 loadedScriptCount++;
-                               if (loadedScriptCount == scripts.length) {
-             
+                                if (loadedScriptCount == scripts.length) {
+
                                     callback();
-             
+
                                 }
-             
+
                             });
-             
+
                         });
-                     
+
                     }
                     else {
-                         
+
                         callback();
-                         
+
                     }
                 }
             }

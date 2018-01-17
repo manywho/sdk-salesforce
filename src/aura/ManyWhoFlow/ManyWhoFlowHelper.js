@@ -7,12 +7,12 @@
         var flowValuesLoaded = false;
         
         if (!$A.util.isUndefined(cmp.get("v.sessionLoaded")) && cmp.get("v.sessionLoaded") ) {
-            console.log("session loaded")
+            console.log("session loaded");
             sessionLoaded = true;
         }
         
         if (!$A.util.isUndefined(cmp.get("v.scriptLoaded")) && cmp.get("v.scriptLoaded") ) {
-            console.log("script loaded")
+            console.log("script loaded");
             scriptLoaded = true;
         }
         
@@ -36,7 +36,7 @@
         	var action = cmp.get("c.saveDomains");
         	action.setParams({ 
                 communityName : cmp.get("v.communityName"),  
-                lightningOriginProd: cmp.get("v.lightningOriginPreview")
+                lightningOriginProd: cmp.get("v.lightningOrigin")
             });
         	
             action.setCallback(this, function(response) {

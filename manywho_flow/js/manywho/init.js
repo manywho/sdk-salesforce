@@ -2,10 +2,6 @@ var manywho = {
     cdnUrl: 'https://assets.manywho.com',
     customResources: null,
     initialize: function () {
-		console.log("provide-session-info: "+$('#manywho-lightning-settings').data('provide-session-info'));
-		console.log("session-token: "+$('#manywho-lightning-settings').data('session-token'));
-		console.log("session-url: "+$('#manywho-lightning-settings').data('session-url'));
-		
         var queryParameters = manywho.utils.parseQueryString(window.location.search.substring(1));
 		
         manywho.settings.initialize({
@@ -45,13 +41,8 @@ var manywho = {
         var salesforceSessionId = null;
         var salesforceSessionUrl = null;
         
-        // Only send the session information if configured to do so
-		//console.log($('#manywho-lightning-settings').data('provide-session-info'));
-        
-		//if (manywho.utils.isEqual('true', $('#manywho-lightning-settings').data('provide-session-info').toString(), true)) {
-        	salesforceSessionId = $('#manywho-lightning-settings').data('session-token');
-        	salesforceSessionUrl = $('#manywho-lightning-settings').data('session-url');
-        //}
+        salesforceSessionId = $('#manywho-lightning-settings').data('session-token');
+        salesforceSessionUrl = $('#manywho-lightning-settings').data('session-url');
         
         var options = {
             authentication: {
@@ -74,10 +65,6 @@ var manywho = {
             callbacks: [],
             collapsible: manywho.utils.isEqual('true', $('#manywho-lightning-settings').data('collapsible'), true)
         };
-
-		console.log("tenant-id" + $('#manywho-lightning-settings').data('tenant-id'));
-		console.log("tenant-id" + $('#manywho-lightning-settings').data('flow-id'));
-		console.log("tenant-id" + $('#manywho-lightning-settings').data('flow-version-id'));
         
 		manywho.engine.initialize(
             $('#manywho-lightning-settings').data('tenant-id'),

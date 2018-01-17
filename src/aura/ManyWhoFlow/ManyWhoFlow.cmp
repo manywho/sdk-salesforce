@@ -1,5 +1,5 @@
 <aura:component controller="ManyWhoFlowUserSessionController"
-                implements="forceCommunity:availableForAllPageTypes,force:hasRecordId" 
+                implements="forceCommunity:availableForAllPageTypes,force:hasRecordId"
                 access="global">
     <aura:attribute name="tenantId" type="String" access='global'/>
     <aura:attribute name="flowId" type="String" access='global'/>
@@ -19,8 +19,8 @@
     <aura:attribute name="objectId" type="String" />
     <aura:attribute name="objectName" type="String" />
     <aura:attribute name="provideSessionInfo" type="String" default="true" />
-    <aura:attribute name="visualforceHostProd" type="String" default="communityurl-developer-edition.eu11.force.com"  access='global'/>
-    <aura:attribute name="lightningOriginPreview" type="String" default="orgexampleurl-dev-ed--livepreview.eu11.force.com" access='global'/>
+    <aura:attribute name="visualforceHostname" type="String" default="communityurl-developer-edition.eu11.force.com"  access='global'/>
+    <aura:attribute name="lightningOrigin" type="String" default="orgexampleurl-dev-ed--livepreview.eu11.force.com" access='global'/>
     <aura:attribute name="communityName" type="String" default="Default Name" access='global'/>
     <aura:attribute name="persistUrl" type="Boolean" default="false" access='global'/> 
     <ltng:require scripts="{!join(',', $Resource.manywho_flow + '/js/vendor/jquery-2.1.4.min.js',
@@ -32,17 +32,18 @@
 							$Resource.manywho_flow + '/js/vendor/moment-with-locales-2.10.6.min.js',
 							$Resource.manywho_flow + '/js/vendor/loglevel-1.4.0.min.js',
                             $Resource.manywho_flow + '/js/manywho/init.js',
-							$Resource.manywho_flow + '/js/manywho/ui-core-2402342f7b.js',
-							$Resource.manywho_flow + '/js/manywho/ui-bootstrap-02e5a1d0f3.js')}"
-                  styles="{!join(',', $Resource.manywho_flow + '/css/manywho/mw-bootstrap-21044ea06e.css',
-							$Resource.manywho_flow + '/css/manywho/ui-bootstrap-39f95ae7f5.css',
-							$Resource.manywho_flow + '/css/themes/mw-sf1.css')}"
+							$Resource.manywho_flow + '/js/ui-core-bb6dd86fe6.js',
+							$Resource.manywho_flow + '/js/ui-bootstrap-d08f705b26.js')}"
+                  styles="{!join(',', $Resource.manywho_flow + '/css/mw-bootstrap-21044ea06e.css',
+							$Resource.manywho_flow + '/css/ui-bootstrap-61e8109445.css',
+							$Resource.manywho_flow + '/css/themes/mw-sf1.css',
+							$Resource.manywho_flow + '/css/themes/mw-paper.css')}"
 
                   afterScriptsLoaded="{!c.afterScriptsLoaded}"/>
     <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
 
     <iframe aura:id="visualforceFrame" 
-            src="{!'https://' + v.visualforceHostProd + '/apex/ManyWhoFlowUserSession?community-name='+ v.communityName + '&amp;lightning-origin-prod=' + v.lightningOriginPreview}" 
+            src="{!'https://' + v.visualforceHostname + '/apex/ManyWhoFlowUserSession?community-name='+ v.communityName + '&amp;lightning-origin=' + v.lightningOrigin}"
             style="width:0;height:0;border:0; border:none;"/>
     
     <div id="manywho">

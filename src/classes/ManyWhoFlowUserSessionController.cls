@@ -1,6 +1,5 @@
 public with sharing class ManyWhoFlowUserSessionController {
-    
-    private String lightningOriginProd;
+
     private String lightningOrigin;
     private String communityName;
     
@@ -9,17 +8,17 @@ public with sharing class ManyWhoFlowUserSessionController {
     public ManyWhoFlowUserSessionController() {
         Map<String, String> parameters = ApexPages.currentPage().getParameters();
         
-        lightningOriginProd = parameters.get('lightning-origin-prod');
+        lightningOrigin = parameters.get('lightning-origin');
         communityName = parameters.get('community-name');
         valid = false;
     }
-    
-    public String getLightningOriginProd() {
-        return 'https://' + lightningOriginProd;
+
+    public String getLightningOrigin() {
+        return 'https://' + lightningOrigin;
     }
 
     public Boolean getValid() {
-        List<ManyWhoCommunity__c> manyWhoCommunities = [Select Name, LightningOriginProd__c  from ManyWhoCommunity__c where Name = :communityName limit 1];
+        List<ManyWhoCommunity__c> manyWhoCommunities = [Select Name, LightningOrigin__c  from ManyWhoCommunity__c where Name = :communityName limit 1];
         
         if (manyWhoCommunities.isEmpty()) {
             valid = false;
@@ -28,17 +27,17 @@ public with sharing class ManyWhoFlowUserSessionController {
         
         ManyWhoCommunity__c manyWhoCommunity = manyWhoCommunities[0];
 
-        valid =  !String.isBlank(lightningOriginProd) && !String.isBlank(communityName) &&
-                    lightningOriginProd == manyWhoCommunities[0].LightningOriginProd__c &&
+        valid =  !String.isBlank(lightningOrigin) && !String.isBlank(communityName) &&
+                    lightningOrigin == manyWhoCommunities[0].LightningOrigin__c &&
                     communityName == manyWhoCommunities[0].Name;
         
         return valid;
     }
     
     @AuraEnabled
-    public static void saveDomains(String communityName, String lightningOriginProd) {        
-        delete [Select Name, LightningOriginProd__c  from ManyWhoCommunity__c where Name= :communityName limit 1];
-        ManyWhoCommunity__c manyWhoCommunity = new ManyWhoCommunity__c (Name=communityName, LightningOriginProd__c=lightningOriginProd);
+    public static void saveDomains(String communityName, String lightningOrigin) {
+        delete [Select Name, LightningOrigin__c  from ManyWhoCommunity__c where Name= :communityName limit 1];
+        ManyWhoCommunity__c manyWhoCommunity = new ManyWhoCommunity__c (Name=communityName, LightningOrigin__c= lightningOrigin);
         upsert (manyWhoCommunity);
     }
 }
