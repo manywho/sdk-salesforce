@@ -16,7 +16,8 @@
 
         /**************************************************************************************************************
         * This page is part of a managed package, it cannot be modified. But you can copy and paste the content of in
-        * this page into a new Visualforce page and then make the modifications.
+        * this page into a new Visualforce page and then make the modifications. You will need to modify each occurrence
+        * of $Resource.manywho_flow and change it to $Resource.BoomiFlow__manywho_flow
         *
         * You can find the license at https://github.com/manywho/sdk-salesforce/blob/master/LICENSE
         *
