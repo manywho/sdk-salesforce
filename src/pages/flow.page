@@ -1,8 +1,8 @@
 <apex:page standardController="ManyWhoFlow__c" extensions="ManyWhoFlowController">
-    <link rel="stylesheet" href="{!URLFOR($Resource.manywho_flow,'css/mw-bootstrap-21044ea06e.css')}" />
-    <link rel="stylesheet" href="{!URLFOR($Resource.manywho_flow,'css/themes/mw-sf1.css')}" />
-    <link rel="stylesheet" href="{!URLFOR($Resource.manywho_flow,'css/themes/mw-paper.css')}" />
-    <link rel="stylesheet" href="{!URLFOR($Resource.manywho_flow,'css/ui-bootstrap-61e8109445.css')}" />
+    <apex:stylesheet value="{!URLFOR($Resource.manywho_flow,'css/mw-bootstrap-21044ea06e.css')}"/>
+    <apex:stylesheet value="{!URLFOR($Resource.manywho_flow,'css/themes/mw-sf1.css')}" />
+    <apex:stylesheet value="{!URLFOR($Resource.manywho_flow,'css/themes/mw-paper.css')}" />
+    <apex:stylesheet value="{!URLFOR($Resource.manywho_flow,'css/ui-bootstrap-61e8109445.css')}" />
 
     <apex:includeScript value="{!URLFOR($Resource.manywho_flow,'js/vendor/jquery-2.1.4.min.js')}"/>
     <apex:includeScript value="{!URLFOR($Resource.manywho_flow,'js/vendor/bootstrap-3.3.6.min.js')}"/>
@@ -14,16 +14,13 @@
     <apex:includeScript value="{!URLFOR($Resource.manywho_flow,'js/vendor/loglevel-1.4.0.min.js')}"/>
     <style type="text/css">
 
-
-        /****************************************************************************************************************************
-        * This page is part of a managed package, it can not be modified. But you can copy and paste the content of this page into a
-        * new Visual Force page.
+        /**************************************************************************************************************
+        * This page is part of a managed package, it can not be modified. But you can copy and paste the content of in
+        * this page into a new Visualforce page and then make the modifications.
         *
-        * The $Resource.manywho_flow will not be found because it is under a Namespace,  to fix this problem you need to add the
-        * namespace to each reference of the static resource ($Resource.manywho_flow)
+        * You can find the license at https://github.com/manywho/sdk-salesforce/blob/master/LICENSE
         *
-        *****************************************************************************************************************************/
-
+        **************************************************************************************************************/
 
         /***********************************************************************************
         * Advice for un-manged package
