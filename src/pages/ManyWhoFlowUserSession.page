@@ -1,7 +1,7 @@
 <apex:page showHeader="false" sidebar="false" controller="ManyWhoFlowUserSessionController">
 
      <!--
-         This page is part of a managed package, it can not be modified. But you can copy and paste the content of
+         This page is part of a managed package, it cannot be modified. But you can copy and paste the content of
          this page into a new Visualforce page and then make the modifications.
 
          You can find the license at https://github.com/manywho/sdk-salesforce/blob/master/LICENSE
