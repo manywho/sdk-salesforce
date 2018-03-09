@@ -1,9 +1,18 @@
 <aura:component controller="ManyWhoFlowUserSessionController"
-                implements="forceCommunity:availableForAllPageTypes,force:hasRecordId"
+                implements="forceCommunity:availableForAllPageTypes,force:hasRecordId,force:appHostable,flexipage:availableForAllPageTypes"
                 access="global">
-    <aura:attribute name="tenantId" type="String" access='global'/>
-    <aura:attribute name="flowId" type="String" access='global'/>
-    <aura:attribute name="flowVersionId" type="String" access='global'/>
+
+    <aura:attribute name="tenantId" default="080361ba-52e8-4001-a44f-4cc88eb54237" type="String" access='global'/>
+    <aura:attribute name="flowId" default="afa12532-a33a-4b53-9870-cf95979180da" type="String" access='global'/>
+    <aura:attribute name="flowVersionId" default="" type="String" access='global'/>
+
+    <aura:attribute name="defaultTenantId" default="080361ba-52e8-4001-a44f-4cc88eb54237" type="String" access='global'/>
+    <aura:attribute name="defaultFlowId"     default="afa12532-a33a-4b53-9870-cf95979180da" type="String" access='global'/>
+    <aura:attribute name="defaultFlowVersionId" default="" type="String" access='global'/>
+
+    <aura:attribute name="defaultFlowLoaded" type="Boolean" default="false" access='global'/>
+    <aura:attribute name="lastLoadedFlow" type="String" default=""/>
+
     <aura:attribute name="sessionId" type="String"/>
     <aura:attribute name="sessionUrl" type="String"/>
     <aura:attribute name="navigationElementId" type="String" access='global'/>
@@ -21,7 +30,7 @@
     <aura:attribute name="provideSessionInfo" type="String" default="true" />
     <aura:attribute name="visualforceHostname" type="String" default="communityurl-developer-edition.eu11.force.com"  access='global'/>
     <aura:attribute name="lightningOrigin" type="String" default="orgexampleurl-dev-ed--livepreview.eu11.force.com" access='global'/>
-    <aura:attribute name="communityName" type="String" default="Default Name" access='global'/>
+    <aura:attribute name="validDomainName" type="String" default="Default Name" />
     <aura:attribute name="persistUrl" type="Boolean" default="false" access='global'/> 
     <ltng:require scripts="{!join(',', $Resource.manywho_flow + '/js/vendor/jquery-2.1.4.min.js',
 							$Resource.manywho_flow + '/js/vendor/bootstrap-3.3.6.min.js',

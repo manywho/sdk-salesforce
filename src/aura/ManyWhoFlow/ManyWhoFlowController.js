@@ -9,8 +9,9 @@
                 
                 console.log("event origin:" + event.origin);
             	if (event.origin !== visualforceOrigin && event.origin !== lightningOrigin) {
-                    console.log("origin not acepted("+ event.origin + ") because is not *" + visualforceOrigin + "* or *"+ lightningOrigin+"*");
-
+                    console.log("origin not acepted:"+ event.origin + " because is not " + visualforceOrigin + " or "+ lightningOrigin+"");
+                    console.log("you can fix this problem addin "+event.origin+" to `Visualforce Hostname` or `Lightning Origin`")
+					helper.initializeFlowIfReady(cmp);
                     return;
             	}
                 
