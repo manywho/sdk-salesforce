@@ -41,8 +41,13 @@ var manywho = {
         var salesforceSessionId = null;
         var salesforceSessionUrl = null;
         
-        salesforceSessionId = $('#manywho-lightning-settings').data('session-token');
-        salesforceSessionUrl = $('#manywho-lightning-settings').data('session-url');
+        // Only send the session information if configured to do so
+		//console.log($('#manywho-lightning-settings').data('provide-session-info'));
+        
+		//if (manywho.utils.isEqual('true', $('#manywho-lightning-settings').data('provide-session-info').toString(), true)) {
+        	salesforceSessionId = $('#manywho-lightning-settings').data('session-token');
+        	salesforceSessionUrl = $('#manywho-lightning-settings').data('session-url');
+        //}
         
         var options = {
             authentication: {

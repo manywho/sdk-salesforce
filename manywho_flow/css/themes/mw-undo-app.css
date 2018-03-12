@@ -1,0 +1,17 @@
+/**
+    SalesForce use a stylesheet (app.css) that overwrite the default css from the browser with empty values,
+    I am adding again those styles because ManyWho doesn't define those classes
+ */
+
+.mw-bs ol {
+    list-style: decimal;
+    -webkit-padding-start: 40px;
+    -moz-padding-start : 40px;
+}
+
+.mw-bs ul {
+    display: block;
+    list-style-type: disc;
+    -webkit-padding-start: 40px;
+    -moz-padding-start : 40px;
+}

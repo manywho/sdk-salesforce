@@ -46,6 +46,7 @@
                   styles="{!join(',', $Resource.manywho_flow + '/css/mw-bootstrap-21044ea06e.css',
 							$Resource.manywho_flow + '/css/ui-bootstrap-61e8109445.css',
 							$Resource.manywho_flow + '/css/themes/mw-sf1.css',
+							$Resource.manywho_flow + '/css/themes/mw-undo-app.css',
 							$Resource.manywho_flow + '/css/themes/mw-paper.css')}"
 
                   afterScriptsLoaded="{!c.afterScriptsLoaded}"/>
