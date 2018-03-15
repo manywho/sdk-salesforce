@@ -43,9 +43,9 @@
     <allowInChatterGroups>false</allowInChatterGroups>
     <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
     <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
     <enableActivities>false</enableActivities>
     <enableBulkApi>true</enableBulkApi>
-    <enableChangeDataCapture>false</enableChangeDataCapture>
     <enableFeeds>false</enableFeeds>
     <enableHistory>false</enableHistory>
     <enableReports>false</enableReports>
@@ -54,6 +54,7 @@
     <enableStreamingApi>true</enableStreamingApi>
     <fields>
         <fullName>LightningOrigin__c</fullName>
+        <deprecated>false</deprecated>
         <externalId>false</externalId>
         <label>LightningOrigin</label>
         <length>255</length>
@@ -70,5 +71,4 @@
     <pluralLabel>ManyWhoCommunities</pluralLabel>
     <searchLayouts/>
     <sharingModel>ReadWrite</sharingModel>
-    <visibility>Public</visibility>
 </CustomObject>

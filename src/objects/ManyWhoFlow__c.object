@@ -43,17 +43,18 @@
     <allowInChatterGroups>false</allowInChatterGroups>
     <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
     <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
     <enableActivities>false</enableActivities>
     <enableBulkApi>true</enableBulkApi>
-    <enableChangeDataCapture>false</enableChangeDataCapture>
     <enableFeeds>true</enableFeeds>
     <enableHistory>false</enableHistory>
     <enableReports>true</enableReports>
-    <enableSearch>false</enableSearch>
+    <enableSearch>true</enableSearch>
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
     <fields>
         <fullName>JoinUri__c</fullName>
+        <deprecated>false</deprecated>
         <externalId>false</externalId>
         <label>JoinUri</label>
         <required>false</required>
@@ -63,6 +64,7 @@
     </fields>
     <fields>
         <fullName>StateJSON__c</fullName>
+        <deprecated>false</deprecated>
         <externalId>false</externalId>
         <label>StateJSON</label>
         <length>131072</length>
@@ -73,6 +75,7 @@
     </fields>
     <fields>
         <fullName>Step__c</fullName>
+        <deprecated>false</deprecated>
         <externalId>false</externalId>
         <label>Step</label>
         <length>255</length>
@@ -91,5 +94,4 @@
     <pluralLabel>ManyWho Flows</pluralLabel>
     <searchLayouts/>
     <sharingModel>ReadWrite</sharingModel>
-    <visibility>Public</visibility>
 </CustomObject>

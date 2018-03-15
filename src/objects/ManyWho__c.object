@@ -5,6 +5,7 @@
     <enableFeeds>false</enableFeeds>
     <fields>
         <fullName>Tenant_Id__c</fullName>
+        <deprecated>false</deprecated>
         <description>The identifier for the Tenant that contains the Flows</description>
         <externalId>false</externalId>
         <label>Tenant Id</label>
