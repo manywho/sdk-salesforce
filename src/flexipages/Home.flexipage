@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlexiPage xmlns="http://soap.sforce.com/2006/04/metadata">
+    <flexiPageRegions>
+        <componentInstances>
+            <componentInstanceProperties>
+                <name>flowId</name>
+                <value>afa12532-a33a-4b53-9870-cf95979180da</value>
+            </componentInstanceProperties>
+            <componentInstanceProperties>
+                <name>flowVersionId</name>
+            </componentInstanceProperties>
+            <componentInstanceProperties>
+                <name>lightningOrigin</name>
+                <value>orgexampleurl-dev-ed--livepreview.eu11.force.com</value>
+            </componentInstanceProperties>
+            <componentInstanceProperties>
+                <name>mode</name>
+            </componentInstanceProperties>
+            <componentInstanceProperties>
+                <name>reportingMode</name>
+            </componentInstanceProperties>
+            <componentInstanceProperties>
+                <name>tenantId</name>
+                <value>080361ba-52e8-4001-a44f-4cc88eb54237</value>
+            </componentInstanceProperties>
+            <componentInstanceProperties>
+                <name>validDomainName</name>
+                <value>Default Name</value>
+            </componentInstanceProperties>
+            <componentInstanceProperties>
+                <name>visualforceHostname</name>
+                <value>communityurl-developer-edition.eu11.force.com</value>
+            </componentInstanceProperties>
+            <componentName>ManyWhoFlow</componentName>
+        </componentInstances>
+        <name>main</name>
+        <type>Region</type>
+    </flexiPageRegions>
+    <masterLabel>Home</masterLabel>
+    <pageTemplate>flexipage:defaultAppHomeTemplate</pageTemplate>
+    <type>AppPage</type>
+</FlexiPage>

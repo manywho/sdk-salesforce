@@ -2,15 +2,51 @@
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <types>
         <members>*</members>
+        <name>ApexTestSuite</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>ApexTrigger</name>
+    </types>
+    <types>
+        <members>ManyWhoFlow</members>
+        <name>AuraDefinitionBundle</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>StaticResource</name>
+    </types>
+    <types>
+        <members>ManyWhoAPI</members>
+        <members>ManyWhoAPI_Tests</members>
+        <members>ManyWhoCurrentUserController</members>
+        <members>ManyWhoCurrentUserController_Tests</members>
+        <members>ManyWhoFlowController</members>
+        <members>ManyWhoFlowController_Tests</members>
+        <members>ManyWhoFlowUserSessionController</members>
+        <members>ManyWhoFlowUserSessionController_Tests</members>
+        <members>ManyWhoHttp</members>
+        <members>ManyWhoHttp_Tests</members>
+        <members>ManyWhoHttpMock</members>
+        <members>ManyWhoObjectUtils</members>
+        <members>ManyWhoObjectUtils_Tests</members>
+        <members>ManyWhoReportingService</members>
+        <members>ManyWhoReportingService_Tests</members>
+        <members>ManyWhoUserInfo</members>
         <name>ApexClass</name>
     </types>
     <types>
         <members>*</members>
-        <name>ApexPage</name>
+        <name>CustomApplication</name>
+    </types>
+    <types>
+        <members>Boomi_Flow_UtilityBar</members>
+        <members>Home</members>
+        <name>FlexiPage</name>
     </types>
     <types>
         <members>*</members>
-        <name>CustomApplication</name>
+        <name>Network</name>
     </types>
     <types>
         <members>*</members>
@@ -18,19 +54,35 @@
     </types>
     <types>
         <members>*</members>
-        <name>CustomTab</name>
+        <name>CustomObjectTranslation</name>
     </types>
     <types>
-        <members>*</members>
+        <members>flow</members>
+        <members>ManyWhoFlowUserSession</members>
+        <name>ApexPage</name>
+    </types>
+    <types>
+        <members>ManyWho</members>
+        <members>SalesforceService</members>
+        <members>SalesforceStagingService</members>
+        <members>ApexDevNet</members>
         <name>RemoteSiteSetting</name>
     </types>
     <types>
-        <members>manywho_flow</members>
-        <name>StaticResource</name>
+        <members>*</members>
+        <name>CustomSite</name>
     </types>
     <types>
         <members>*</members>
-        <name>AuraDefinitionBundle</name>
+        <name>SiteDotCom</name>
     </types>
-    <version>36.0</version>
+    <types>
+        <members>*</members>
+        <name>CustomTab</name>
+    </types>
+    <types>
+        <members>Security</members>
+        <name>Settings</name>
+    </types>
+    <version>38.0</version>
 </Package>
