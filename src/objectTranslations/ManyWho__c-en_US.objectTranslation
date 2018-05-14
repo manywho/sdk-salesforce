@@ -9,6 +9,22 @@
         <value>ManyWho</value>
     </caseValues>
     <fields>
+        <label><!-- Account Flow Id --></label>
+        <name>Account_Flow_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Case Id --></label>
+        <name>Case_Flow_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Lead Flow Id --></label>
+        <name>Lead_Flow_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity Flow Id --></label>
+        <name>Opportunity_Flow_Id__c</name>
+    </fields>
+    <fields>
         <label><!-- Tenant Id --></label>
         <name>Tenant_Id__c</name>
     </fields>

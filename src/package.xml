@@ -8,6 +8,7 @@
         <members>ManyWhoFlowAccountController</members>
         <members>ManyWhoFlowAccountController_Tests</members>
         <members>ManyWhoFlowCaseController</members>
+        <members>ManyWhoFlowCaseController_Tests</members>
         <members>ManyWhoFlowContactController</members>
         <members>ManyWhoFlowContactController_Tests</members>
         <members>ManyWhoFlowController</members>
