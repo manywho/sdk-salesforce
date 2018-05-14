@@ -1,33 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <types>
-        <members>*</members>
-        <name>ApexTestSuite</name>
-    </types>
-    <types>
-        <members>*</members>
-        <name>ApexTrigger</name>
-    </types>
-    <types>
-        <members>ManyWhoFlow</members>
-        <name>AuraDefinitionBundle</name>
-    </types>
-    <types>
-        <members>*</members>
-        <name>StaticResource</name>
-    </types>
-    <types>
         <members>ManyWhoAPI</members>
         <members>ManyWhoAPI_Tests</members>
         <members>ManyWhoCurrentUserController</members>
         <members>ManyWhoCurrentUserController_Tests</members>
+        <members>ManyWhoFlowAccountController</members>
+        <members>ManyWhoFlowAccountController_Tests</members>
+        <members>ManyWhoFlowCaseController</members>
+        <members>ManyWhoFlowContactController</members>
+        <members>ManyWhoFlowContactController_Tests</members>
         <members>ManyWhoFlowController</members>
         <members>ManyWhoFlowController_Tests</members>
+        <members>ManyWhoFlowLeadController</members>
+        <members>ManyWhoFlowLeadController_Tests</members>
+        <members>ManyWhoFlowOpportunityController</members>
+        <members>ManyWhoFlowOpportunityController_Tests</members>
         <members>ManyWhoFlowUserSessionController</members>
         <members>ManyWhoFlowUserSessionController_Tests</members>
         <members>ManyWhoHttp</members>
-        <members>ManyWhoHttp_Tests</members>
         <members>ManyWhoHttpMock</members>
+        <members>ManyWhoHttp_Tests</members>
         <members>ManyWhoObjectUtils</members>
         <members>ManyWhoObjectUtils_Tests</members>
         <members>ManyWhoReportingService</members>
@@ -36,53 +29,78 @@
         <name>ApexClass</name>
     </types>
     <types>
-        <members>*</members>
-        <name>CustomApplication</name>
+        <members>ManyWhoFlowUserSession</members>
+        <members>flow</members>
+        <members>flowaccount</members>
+        <members>flowcontact</members>
+        <members>flowlead</members>
+        <members>flowopportunity</members>
+        <members>fowcase</members>
+        <name>ApexPage</name>
     </types>
     <types>
-        <members>Boomi_Flow_UtilityBar</members>
-        <members>Home</members>
-        <name>FlexiPage</name>
+        <members>ManyWhoFlow</members>
+        <name>AuraDefinitionBundle</name>
     </types>
     <types>
         <members>*</members>
-        <name>Network</name>
+        <name>CspTrustedSite</name>
     </types>
     <types>
-        <members>*</members>
+        <members>Account.JoinUri__c</members>
+        <members>Case.JoinUri__c</members>
+        <members>Contact.JoinUri__c</members>
+        <members>Lead.JoinUri__c</members>
+        <members>ManyWhoCommunity__c.LightningOrigin__c</members>
+        <members>ManyWhoFlow__c.JoinUri__c</members>
+        <members>ManyWhoFlow__c.StateJSON__c</members>
+        <members>ManyWhoFlow__c.Step__c</members>
+        <members>ManyWho__c.Account_Flow_Id__c</members>
+        <members>ManyWho__c.Case_Flow_Id__c</members>
+        <members>ManyWho__c.Lead_Flow_Id__c</members>
+        <members>ManyWho__c.Opportunity_Flow_Id__c</members>
+        <members>ManyWho__c.Tenant_Id__c</members>
+        <name>CustomField</name>
+    </types>
+    <types>
+        <members>ManyWhoCommunity__c</members>
+        <members>ManyWhoFlow__c</members>
+        <members>ManyWho__c</members>
         <name>CustomObject</name>
     </types>
     <types>
-        <members>*</members>
+        <members>ManyWhoCommunity__c-en_US</members>
+        <members>ManyWhoFlow__c-en_US</members>
+        <members>ManyWho__c-en_US</members>
         <name>CustomObjectTranslation</name>
     </types>
     <types>
-        <members>flow</members>
-        <members>ManyWhoFlowUserSession</members>
-        <name>ApexPage</name>
+        <members>BoomiFlow__Home</members>
+        <name>CustomTab</name>
+    </types>
+    <types>
+        <members>Boomi_Flow_UtilityBar</members>
+        <name>FlexiPage</name>
     </types>
     <types>
         <members>ManyWho</members>
         <members>SalesforceService</members>
         <members>SalesforceStagingService</members>
-        <members>ApexDevNet</members>
         <name>RemoteSiteSetting</name>
     </types>
     <types>
-        <members>*</members>
-        <name>CustomSite</name>
+        <members>ManyWhoCommunity__c</members>
+        <members>ManyWhoFlow__c</members>
+        <members>ManyWho__c</members>
+        <name>SharingRules</name>
     </types>
     <types>
-        <members>*</members>
-        <name>SiteDotCom</name>
-    </types>
-    <types>
-        <members>*</members>
-        <name>CustomTab</name>
+        <members>manywho_flow</members>
+        <name>StaticResource</name>
     </types>
     <types>
         <members>Security</members>
         <name>Settings</name>
     </types>
-    <version>38.0</version>
+    <version>42.0</version>
 </Package>

@@ -93,7 +93,7 @@ To run a Flow inside of Lightning Communities, we've created a Lightning Compone
 That's it. Basically, the Lightning Component can be re-used for all of your Flows. All it needs is the tenant-id and flow-id to know which Flow to run.
 
 
-## Managing Change
+## Managing Change un-managed Package
 
 It's important to note that each time you deploy this project, we will overwrite any changes you've made to the code. If you think you're likely to make a bunch of changes, we recomment using the power of GitHub!
 
