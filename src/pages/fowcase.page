@@ -311,23 +311,18 @@
                 });
 
                 // Pass input values into the page if they have been provided
-                var inputValues = null;
-
-                if (queryParameters['id'] != null &&
-                    queryParameters['id'].trim().length > 0) {
-                    inputValues = [];
-                    inputValues.push({
-                        'developerName': 'SalesforceNotificationRecordId',
-                        'contentType': 'ContentString',
-                        'contentValue': queryParameters['id'],
-                    });
-                }
+                var inputValues = [];
+                inputValues.push({
+                    'developerName': 'SalesforceNotificationRecordId',
+                    'contentType': 'ContentString',
+                    'contentValue': '{!case.id}'
+                });
 
                 inputValues.push({
-                        'developerName': 'SalesforceNotificationObjectName',
-                        'contentType': 'ContentString',
-                        'contentValue': 'Case',
-                    });
+                    'developerName': 'SalesforceNotificationObjectName',
+                    'contentType': 'ContentString',
+                    'contentValue': 'Case'
+                });
                
 
                 var options = {
