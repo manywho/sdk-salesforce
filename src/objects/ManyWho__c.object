@@ -4,39 +4,20 @@
     <description>The custom settings for ManyWho</description>
     <enableFeeds>false</enableFeeds>
     <fields>
-        <fullName>Account_Flow_Id__c</fullName>
+        <fullName>Flow_Id__c</fullName>
+        <description>The default flow id</description>
         <externalId>false</externalId>
-        <label>Account Flow Id</label>
+        <label>Flow Id</label>
         <length>100</length>
-        <required>false</required>
+        <required>true</required>
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
     </fields>
     <fields>
-        <fullName>Case_Flow_Id__c</fullName>
+        <fullName>Flow_Version_Id__c</fullName>
         <externalId>false</externalId>
-        <label>Case Id</label>
-        <length>100</length>
-        <required>false</required>
-        <trackTrending>false</trackTrending>
-        <type>Text</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
-        <fullName>Lead_Flow_Id__c</fullName>
-        <externalId>false</externalId>
-        <label>Lead Flow Id</label>
-        <length>100</length>
-        <required>false</required>
-        <trackTrending>false</trackTrending>
-        <type>Text</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
-        <fullName>Opportunity_Flow_Id__c</fullName>
-        <externalId>false</externalId>
-        <label>Opportunity Flow Id</label>
+        <label>Flow Version Id</label>
         <length>100</length>
         <required>false</required>
         <trackTrending>false</trackTrending>

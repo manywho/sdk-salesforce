@@ -1,12 +1,9 @@
 global class ManyWhoFlowOpportunityController {
-    global String stateId { get; set; }
-    global String tenantId { get; set; }
+    private ManyWhoSettingsHandler settingHandler;
 
     global ManyWhoFlowOpportunityController(ApexPages.StandardController stdController) {
-        String id;
-
-        // Get the id if that exists
-        id = ApexPages.currentPage().getParameters().get('id');
+        String id = ApexPages.currentPage().getParameters().get('id');
+        settingHandler = new ManyWhoSettingsHandler('OpportunityDefault');
 
         if (String.isNotBlank(id)) {
             // If we have the id, find the associated ManyWhoFlow record
@@ -18,13 +15,23 @@ global class ManyWhoFlowOpportunityController {
                 stateId = opportunityFlows[0].JoinUri__c.split('join=')[1];
             }
         }
-        
-        // Get the tenant id from custom settings
-        ManyWho__c customSetting = ManyWho__c.getInstance('Default');
-        if (customSetting != null) {
-            tenantId = customSetting.Tenant_Id__c;
-        } else {
-            tenantId = '';
-        }
+
+    }
+
+    global String stateId { get; set; }
+
+    global String tenantId {
+        get { return settingHandler.getTenantId();}
+        set;
+    }
+
+    global String flowId {
+        get { return settingHandler.getFlowId();}
+        set;
+    }
+
+    global String flowVersionId {
+        get { return settingHandler.getFlowVersionId();}
+        set;
     }
 }

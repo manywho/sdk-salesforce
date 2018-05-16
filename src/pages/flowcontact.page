@@ -34,6 +34,12 @@
         * YOU HAVE BEEN WARNED!!! :)
         ***********************************************************************************/
 
+        /**************************************************************************************************************
+        * It is possible to change the default flow creating a new custom setting of type ManyWho__c
+        * then adding a record with name ContactDefault and populating the fields
+        *
+        ***************************************************************************************************************/
+
         body {
             padding: 0px !important;
             margin: 0px !important;
@@ -348,19 +354,10 @@
                     isFullWidth: true
                 };
 
-                var tenantId = '{!tenantId}';
-                var flowId = queryParameters['flow-id'];
-
-                // If the tenant id has not be changed, we load the default Flow
-                if (tenantId.trim().length == 0) {
-                    tenantId = 'a1803cdc-760b-49ac-ab67-f0e1f0a2f849';
-                    flowId = '23e32806-b297-482f-b4ec-16d3dd39db81';
-                }
-
                 manywho.engine.initialize(
-                    tenantId,
-                    flowId,
-                    queryParameters['flow-version-id'],
+                    '{!tenantId}',
+                    '{!flowId}',
+                    '{!flowVersionId}',
                     'main',
                     stateId,
                     queryParameters['authorization'],

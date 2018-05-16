@@ -34,6 +34,12 @@
         * YOU HAVE BEEN WARNED!!! :)
         ***********************************************************************************/
 
+        /**************************************************************************************************************
+        * It is possible to change the default flow creating a new custom setting of type ManyWho__c
+        * then adding a record with name AccountDefault and populating the fields
+        *
+        ***************************************************************************************************************/
+
         body {
             padding: 0px !important;
             margin: 0px !important;
@@ -348,19 +354,10 @@
                     isFullWidth: true
                 };
 
-                var tenantId = '{!tenantId}';
-                var flowId = queryParameters['flow-id'];
-
-                // If the tenant id has not be changed, we load the default Flow
-                if (tenantId.trim().length == 0) {
-                    tenantId = '080361ba-52e8-4001-a44f-4cc88eb54237';
-                    flowId = '13b6e4c6-03dd-46ba-85f4-5bab7d8dffc4';
-                }
-
                 manywho.engine.initialize(
-                    tenantId,
-                    flowId,
-                    queryParameters['flow-version-id'],
+                    '{!tenantId}',
+                    '{!flowId}',
+                    '{!flowVersionId}',
                     'main',
                     stateId,
                     queryParameters['authorization'],
