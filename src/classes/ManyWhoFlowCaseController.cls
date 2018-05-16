@@ -2,7 +2,7 @@ global class ManyWhoFlowCaseController {
     private ManyWhoSettingsHandler settingHandler;
 
     global ManyWhoFlowCaseController(ApexPages.StandardController stdController) {
-        String id = ApexPages.currentPage().getParameters().get('id');
+        String id = stdController.getId();
         settingHandler = new ManyWhoSettingsHandler('CaseDefault');
 
         if (String.isNotBlank(id)) {

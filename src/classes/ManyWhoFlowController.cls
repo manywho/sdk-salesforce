@@ -4,7 +4,7 @@ global with sharing class ManyWhoFlowController {
     private ManyWhoSettingsHandler settingHandler;
 
     global ManyWhoFlowController(ApexPages.StandardController stdController) {
-        String id= ApexPages.currentPage().getParameters().get('id');
+        String id = stdController.getId();
         settingHandler = new ManyWhoSettingsHandler('FlowDefault');
 
         if (String.isNotBlank(id)) {

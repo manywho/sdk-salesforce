@@ -2,7 +2,7 @@ global class ManyWhoFlowOpportunityController {
     private ManyWhoSettingsHandler settingHandler;
 
     global ManyWhoFlowOpportunityController(ApexPages.StandardController stdController) {
-        String id = ApexPages.currentPage().getParameters().get('id');
+        String id = stdController.getId();
         settingHandler = new ManyWhoSettingsHandler('OpportunityDefault');
 
         if (String.isNotBlank(id)) {

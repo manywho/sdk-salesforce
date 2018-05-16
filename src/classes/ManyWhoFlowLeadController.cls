@@ -2,7 +2,7 @@ global class ManyWhoFlowLeadController {
     private ManyWhoSettingsHandler settingHandler;
 
     global ManyWhoFlowLeadController(ApexPages.StandardController stdController) {
-        String id = ApexPages.currentPage().getParameters().get('id');
+        String id = stdController.getId();
         settingHandler = new ManyWhoSettingsHandler('LeadDefault');
 
         if (String.isNotBlank(id)) {

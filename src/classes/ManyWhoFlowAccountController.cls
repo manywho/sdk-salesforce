@@ -2,7 +2,7 @@ global class ManyWhoFlowAccountController {
     private ManyWhoSettingsHandler settingHandler;
 
     global ManyWhoFlowAccountController(ApexPages.StandardController stdController) {
-        String id = ApexPages.currentPage().getParameters().get('id');
+        String id = stdController.getId();
         settingHandler = new ManyWhoSettingsHandler('AccountDefault');
 
         if (String.isNotBlank(id)) {
