@@ -9,20 +9,32 @@
         <value>ManyWho</value>
     </caseValues>
     <fields>
-        <label><!-- Account Flow Id --></label>
-        <name>Account_Flow_Id__c</name>
+        <label><!-- Client Side Validation --></label>
+        <name>Client_Side_Validation__c</name>
     </fields>
     <fields>
-        <label><!-- Case Id --></label>
-        <name>Case_Flow_Id__c</name>
+        <label><!-- Collaboration Uri --></label>
+        <name>Collaboration_Uri__c</name>
     </fields>
     <fields>
-        <label><!-- Lead Flow Id --></label>
-        <name>Lead_Flow_Id__c</name>
+        <label><!-- Collapsible --></label>
+        <name>Collapsible__c</name>
     </fields>
     <fields>
-        <label><!-- Opportunity Flow Id --></label>
-        <name>Opportunity_Flow_Id__c</name>
+        <label><!-- Flow Id --></label>
+        <name>Flow_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Flow Version Id --></label>
+        <name>Flow_Version_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Is Wizard Navigation --></label>
+        <name>Is_Wizard_Navigation__c</name>
+    </fields>
+    <fields>
+        <label><!-- Mode --></label>
+        <name>Mode__c</name>
     </fields>
     <fields>
         <label><!-- Tenant Id --></label>

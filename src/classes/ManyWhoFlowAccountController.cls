@@ -19,17 +19,50 @@ global class ManyWhoFlowAccountController {
     global String stateId { get; set; }
 
     global String tenantId {
-        get { return settingHandler.getTenantId();}
+        get {
+            return settingHandler.getTenantId();}
         set;
     }
 
     global String flowId {
-        get { return settingHandler.getFlowId();}
+        get {
+            return settingHandler.getFlowId();}
         set;
     }
 
     global String flowVersionId {
-        get { return settingHandler.getFlowVersionId();}
+        get {
+            return settingHandler.getFlowVersionId();}
+        set;
+    }
+
+    global String clientSideValidation {
+        get {
+            return settingHandler.getClientSideValidation();}
+        set;
+    }
+
+    global String collapsible {
+        get {
+            return settingHandler.getCollapsible();}
+        set;
+    }
+
+    global String isWizardNavigation {
+        get {
+            return settingHandler.getIsWizardNavigation();}
+        set;
+    }
+
+    global String collaborationUri {
+        get {
+            return settingHandler.getCollaborationUri();}
+        set;
+    }
+
+    global String mode {
+        get {
+            return settingHandler.getMode();}
         set;
     }
 }

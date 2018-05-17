@@ -1,7 +1,6 @@
 <apex:page standardController="Lead" extensions="ManyWhoFlowLeadController">
     <apex:stylesheet value="{!URLFOR($Resource.manywho_flow,'css/mw-bootstrap-21044ea06e.css')}"/>
     <apex:stylesheet value="{!URLFOR($Resource.manywho_flow,'css/themes/mw-sf1.css')}" />
-    <apex:stylesheet value="{!URLFOR($Resource.manywho_flow,'css/themes/mw-paper.css')}" />
     <apex:stylesheet value="{!URLFOR($Resource.manywho_flow,'css/ui-bootstrap-61e8109445.css')}" />
 
     <apex:includeScript value="{!URLFOR($Resource.manywho_flow,'js/vendor/jquery-2.1.4.min.js')}"/>
@@ -324,7 +323,7 @@
                     'contentType': 'ContentString',
                     'contentValue': 'Lead'
                 });
-               
+
 
                 var options = {
                     authentication: {
@@ -332,20 +331,24 @@
                         sessionUrl: '{!$Api.Partner_Server_URL_390}'
                     },
                     navigationElementId: queryParameters['navigation-element-id'],
-                    mode: null,
+                    mode: {!mode},
                     reportingMode: queryParameters['reporting-mode'],
                     trackLocation: false,
                     replaceUrl: true,
                     collaboration: {
-                        isEnabled: true
+                        isEnabled: true,
+                        uri: {!collaborationUri}
                     },
                     autoFocusInput: true,
                     inputs: inputValues,
                     annotations: null,
-                    collapsible: false,
+                    collapsible: {!collapsible},
                     navigation: {
                         isFixed: false,
-                        isWizard: true
+                        isWizard: {!isWizardNavigation}
+                    },
+                    validation: {
+                        isEnabled: {!clientSideValidation}
                     },
                     isFullWidth: true
                 };

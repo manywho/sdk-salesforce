@@ -2,61 +2,69 @@
  * Created by jose on 15/05/18.
  *
  * This class handle the default flows for the visualforce pages with embedded flows
+ * Note: non of the methods that are using defaultCustomSetting can be used in a constructor of a controller
  */
 
 public  with sharing class ManyWhoSettingsHandler {
     private String settingName;
-    private String tenantId;
-    private String flowId;
-    private String flowVersionId;
     private ManyWho__c customSetting;
 
     public ManyWhoSettingsHandler(String settingName) {
-        this.customSetting = null;
+        customSetting = null;
         this.settingName = settingName;
-        // assign default tenantId
-        this.tenantId = '1ae14654-0699-401f-aaf6-f0adbb5418c8';
-        // assign default flowId
-        this.flowId = '0fabfe3a-3226-4288-8ea0-be69bb9cb612';
-        this.flowVersionId = '';
     }
 
-    /**
-     * this method can not be called in the constructor of a controller
-     *
-     * @return
-     */
     public String getTenantId() {
         return defaultCustomSetting().Tenant_Id__c;
     }
 
-    /**
-     * this method can not be called in the constructor of a controller
-     *
-     * @return
-     */
     public String getFlowId() {
-        String uriFlowId = ApexPages.currentPage().getParameters().get('flow-id');
-
         if (getParameterUri('flow-id') != null) {
-            flowId = getParameterUri('flow-id') ;
+            return getParameterUri('flow-id') ;
         } else {
-            flowId = defaultCustomSetting().Flow_Id__c;
+            return defaultCustomSetting().Flow_Id__c;
         }
-
-        return flowId;
     }
 
 
     public String getFlowVersionId() {
         if (getParameterUri('flow-id') != null) {
-            flowVersionId = getParameterUri('flow-version-id');
+            return getParameterUri('flow-version-id');
         } else {
-            flowVersionId = '';
+            return '';
         }
-
-        return flowVersionId;
     }
+
+    public String getClientSideValidation() {
+        return (defaultCustomSetting().Client_Side_Validation__c)?'true':'false';
+    }
+
+    public String getCollaborationUri() {
+        if (defaultCustomSetting().Collaboration_Uri__c != null &&
+                defaultCustomSetting().Collaboration_Uri__c.length()>0) {
+
+            return '\'' + defaultCustomSetting().Collaboration_Uri__c + '\'';
+        }else{
+            return 'null';
+        }
+    }
+
+    public String getIsWizardNavigation() {
+        return (defaultCustomSetting().Is_Wizard_Navigation__c)?'true':'false';
+    }
+
+    public String getCollapsible() {
+        return (defaultCustomSetting().Collapsible__c)?'true':'false';
+    }
+
+    public String getMode() {
+        if (defaultCustomSetting().Mode__c != null && defaultCustomSetting().Mode__c.length()>0) {
+            return '\''+ defaultCustomSetting().Mode__c+'\'';
+        } else {
+            return 'null';
+        }
+    }
+
 
     private String getParameterUri(String nameParameter) {
         if ( ApexPages.currentPage().getParameters().get(nameParameter) != null &&
@@ -81,9 +89,17 @@ public  with sharing class ManyWhoSettingsHandler {
         // the setting is not in the persistence we need to insert the value in persistence
         // with defaults values for tenantId, flowId, flowVersionId
         customSetting = new ManyWho__c();
-        customSetting.Tenant_Id__c = tenantId;
-        customSetting.Flow_Id__c = flowId;
-        customSetting.Flow_Version_Id__c = flowVersionId;
+        customSetting.Tenant_Id__c = '1ae14654-0699-401f-aaf6-f0adbb5418c8';
+        customSetting.Flow_Id__c = '0fabfe3a-3226-4288-8ea0-be69bb9cb612';
+        customSetting.Flow_Version_Id__c = '';
+
+        customSetting.Client_Side_Validation__c = false;
+        customSetting.Collaboration_Uri__c = '';
+        customSetting.Is_Wizard_Navigation__c = false;
+        customSetting.Collapsible__c = false;
+        customSetting.Mode__c = '';
+
+
         customSetting.Name = settingName;
 
         // ToDo: this line is currently ignored, it would be good to fix this problem, because then the user will needs

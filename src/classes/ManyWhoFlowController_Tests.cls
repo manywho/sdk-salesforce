@@ -58,6 +58,11 @@ public class ManyWhoFlowController_Tests {
         System.assertEquals(true, true);
         System.assertEquals('1ae14654-0699-401f-aaf6-f0adbb5418c8', manywhoController.tenantId);
         System.assertEquals('0fabfe3a-3226-4288-8ea0-be69bb9cb612', manywhoController.flowId);
+        System.assertEquals('null', manywhoController.collaborationUri);
+        System.assertEquals('false', manywhoController.clientSideValidation);
+        System.assertEquals('false', manywhoController.isWizardNavigation);
+        System.assertEquals('null', manywhoController.mode);
+        System.assertEquals('false', manywhoController.collapsible);
         System.assertEquals('', manywhoController.flowVersionId);
     }
 

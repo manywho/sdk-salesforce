@@ -4,6 +4,32 @@
     <description>The custom settings for ManyWho</description>
     <enableFeeds>false</enableFeeds>
     <fields>
+        <fullName>Client_Side_Validation__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Client Side Validation</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Collaboration_Uri__c</fullName>
+        <externalId>false</externalId>
+        <label>Collaboration Uri</label>
+        <length>250</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Collapsible__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Collapsible</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
         <fullName>Flow_Id__c</fullName>
         <description>The default flow id</description>
         <externalId>false</externalId>
@@ -18,6 +44,24 @@
         <fullName>Flow_Version_Id__c</fullName>
         <externalId>false</externalId>
         <label>Flow Version Id</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Is_Wizard_Navigation__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Is Wizard Navigation</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Mode__c</fullName>
+        <externalId>false</externalId>
+        <label>Mode</label>
         <length>100</length>
         <required>false</required>
         <trackTrending>false</trackTrending>
