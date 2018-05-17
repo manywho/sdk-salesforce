@@ -67,6 +67,10 @@
         <members>ManyWhoCommunity__c</members>
         <members>ManyWhoFlow__c</members>
         <members>ManyWho__c</members>
+        <members>Account</members>
+        <members>Case</members>
+        <members>Contact</members>
+        <members>Lead</members>
         <name>CustomObject</name>
     </types>
     <types>
