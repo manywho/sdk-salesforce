@@ -26,6 +26,7 @@
         <members>ManyWhoObjectUtils_Tests</members>
         <members>ManyWhoReportingService</members>
         <members>ManyWhoReportingService_Tests</members>
+        <members>ManyWhoSettingsHandler</members>
         <members>ManyWhoUserInfo</members>
         <name>ApexClass</name>
     </types>

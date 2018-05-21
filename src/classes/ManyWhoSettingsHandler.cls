@@ -7,7 +7,7 @@
 
 public  with sharing class ManyWhoSettingsHandler {
     private String settingName;
-    private ManyWho__c customSetting;
+    private ManyWho_Flow_Config__c customSetting;
 
     public ManyWhoSettingsHandler(String settingName) {
         customSetting = null;
@@ -75,22 +75,22 @@ public  with sharing class ManyWhoSettingsHandler {
         }
     }
 
-    private ManyWho__c defaultCustomSetting() {
+    private ManyWho_Flow_Config__c defaultCustomSetting() {
         if (customSetting != null) {
             return customSetting;
         }
 
         // check persistence, if exist setting with settingName then we use that configuration
-        customSetting = ManyWho__c.getInstance(settingName);
+        customSetting = ManyWho_Flow_Config__c.getInstance(settingName);
         if (customSetting != null) {
             return customSetting;
         }
 
         // the setting is not in the persistence we need to insert the value in persistence
         // with defaults values for tenantId, flowId, flowVersionId
-        customSetting = new ManyWho__c();
-        customSetting.Tenant_Id__c = '1ae14654-0699-401f-aaf6-f0adbb5418c8';
-        customSetting.Flow_Id__c = '0fabfe3a-3226-4288-8ea0-be69bb9cb612';
+        customSetting = new ManyWho_Flow_Config__c();
+        customSetting.Tenant_Id__c = '080361ba-52e8-4001-a44f-4cc88eb54237';
+        customSetting.Flow_Id__c = '13b6e4c6-03dd-46ba-85f4-5bab7d8dffc4';
         customSetting.Flow_Version_Id__c = '';
 
         customSetting.Client_Side_Validation__c = false;

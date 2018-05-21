@@ -15,8 +15,8 @@ public class ManyWhoFlowController_Tests {
         Test.setCurrentPage(pageRef);
 
         System.assertEquals(true, true);
-        System.assertEquals('1ae14654-0699-401f-aaf6-f0adbb5418c8', manywhoController.tenantId);
-        System.assertEquals('0fabfe3a-3226-4288-8ea0-be69bb9cb612', manywhoController.flowId);
+        System.assertEquals('080361ba-52e8-4001-a44f-4cc88eb54237', manywhoController.tenantId);
+        System.assertEquals('13b6e4c6-03dd-46ba-85f4-5bab7d8dffc4', manywhoController.flowId);
     }
 
 
@@ -36,7 +36,7 @@ public class ManyWhoFlowController_Tests {
         Test.setCurrentPage(pageRef);
 
         System.assertEquals(true, true);
-        System.assertEquals('1ae14654-0699-401f-aaf6-f0adbb5418c8', manywhoController.tenantId);
+        System.assertEquals('080361ba-52e8-4001-a44f-4cc88eb54237', manywhoController.tenantId);
         System.assertEquals('1234', manywhoController.flowId);
         System.assertEquals('123456', manywhoController.flowVersionId);
     }
@@ -56,8 +56,8 @@ public class ManyWhoFlowController_Tests {
         Test.setCurrentPage(pageRef);
 
         System.assertEquals(true, true);
-        System.assertEquals('1ae14654-0699-401f-aaf6-f0adbb5418c8', manywhoController.tenantId);
-        System.assertEquals('0fabfe3a-3226-4288-8ea0-be69bb9cb612', manywhoController.flowId);
+        System.assertEquals('080361ba-52e8-4001-a44f-4cc88eb54237', manywhoController.tenantId);
+        System.assertEquals('13b6e4c6-03dd-46ba-85f4-5bab7d8dffc4', manywhoController.flowId);
         System.assertEquals('null', manywhoController.collaborationUri);
         System.assertEquals('false', manywhoController.clientSideValidation);
         System.assertEquals('false', manywhoController.isWizardNavigation);

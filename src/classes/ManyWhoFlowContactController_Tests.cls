@@ -23,8 +23,8 @@ private class ManyWhoFlowContactController_Tests {
         ApexPages.StandardController sc = new ApexPages.StandardController(testContact);
         ManyWhoFlowContactController ctr = new ManyWhoFlowContactController(sc);
         System.assertEquals('12345', ctr.stateId);
-        System.assertEquals('1ae14654-0699-401f-aaf6-f0adbb5418c8', ctr.tenantId);
-        System.assertEquals('0fabfe3a-3226-4288-8ea0-be69bb9cb612', ctr.flowId);
+        System.assertEquals('080361ba-52e8-4001-a44f-4cc88eb54237', ctr.tenantId);
+        System.assertEquals('13b6e4c6-03dd-46ba-85f4-5bab7d8dffc4', ctr.flowId);
         System.assertEquals('null', ctr.collaborationUri);
         System.assertEquals('false', ctr.clientSideValidation);
         System.assertEquals('false', ctr.isWizardNavigation);
