@@ -57,7 +57,7 @@
         <fullName>JoinUri__c</fullName>
         <deprecated>false</deprecated>
         <externalId>false</externalId>
-        <label>JoinUri</label>
+        <label>Join URI</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
         <trackTrending>false</trackTrending>
