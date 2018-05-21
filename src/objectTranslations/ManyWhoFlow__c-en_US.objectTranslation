@@ -9,7 +9,7 @@
         <value>ManyWho Flows</value>
     </caseValues>
     <fields>
-        <label><!-- JoinUri --></label>
+        <label><!-- Join URI --></label>
         <name>JoinUri__c</name>
     </fields>
     <fields>
