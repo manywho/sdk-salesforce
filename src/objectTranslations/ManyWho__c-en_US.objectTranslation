@@ -9,34 +9,6 @@
         <value>ManyWho</value>
     </caseValues>
     <fields>
-        <label><!-- Client Side Validation --></label>
-        <name>Client_Side_Validation__c</name>
-    </fields>
-    <fields>
-        <label><!-- Collaboration Uri --></label>
-        <name>Collaboration_Uri__c</name>
-    </fields>
-    <fields>
-        <label><!-- Collapsible --></label>
-        <name>Collapsible__c</name>
-    </fields>
-    <fields>
-        <label><!-- Flow Id --></label>
-        <name>Flow_Id__c</name>
-    </fields>
-    <fields>
-        <label><!-- Flow Version Id --></label>
-        <name>Flow_Version_Id__c</name>
-    </fields>
-    <fields>
-        <label><!-- Is Wizard Navigation --></label>
-        <name>Is_Wizard_Navigation__c</name>
-    </fields>
-    <fields>
-        <label><!-- Mode --></label>
-        <name>Mode__c</name>
-    </fields>
-    <fields>
         <label><!-- Tenant Id --></label>
         <name>Tenant_Id__c</name>
     </fields>

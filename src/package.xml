@@ -57,16 +57,21 @@
         <members>ManyWhoFlow__c.JoinUri__c</members>
         <members>ManyWhoFlow__c.StateJSON__c</members>
         <members>ManyWhoFlow__c.Step__c</members>
-        <members>ManyWho__c.Account_Flow_Id__c</members>
-        <members>ManyWho__c.Case_Flow_Id__c</members>
-        <members>ManyWho__c.Lead_Flow_Id__c</members>
-        <members>ManyWho__c.Opportunity_Flow_Id__c</members>
-        <members>ManyWho__c.Tenant_Id__c</members>
+        <members>ManyWho_Flow_Config__c.Client_Side_Validation__c</members>
+        <members>ManyWho_Flow_Config__c.Collaboration_Uri__c</members>
+        <members>ManyWho_Flow_Config__c.Collapsible__c</members>
+        <members>ManyWho_Flow_Config__c.Flow_Id__c</members>
+        <members>ManyWho_Flow_Config__c.Flow_Version_Id__c</members>
+        <members>ManyWho_Flow_Config__c.Is_Wizard_Navigation__c</members>
+        <members>ManyWho_Flow_Config__c.Mode__c</members>
+        <members>ManyWho_Flow_Config__c.Tenant_Id__c</members>
+        <members>Opportunity.JoinUri__c</members>
         <name>CustomField</name>
     </types>
     <types>
         <members>ManyWhoCommunity__c</members>
         <members>ManyWhoFlow__c</members>
+        <members>ManyWho_Flow_Config__c</members>
         <members>ManyWho__c</members>
         <members>Account</members>
         <members>Case</members>
@@ -77,15 +82,18 @@
     <types>
         <members>ManyWhoCommunity__c-en_US</members>
         <members>ManyWhoFlow__c-en_US</members>
+        <members>ManyWho_Flow_Config__c-en_US</members>
         <members>ManyWho__c-en_US</members>
         <name>CustomObjectTranslation</name>
     </types>
     <types>
         <members>BoomiFlow__Home</members>
+        <members>Home</members>
         <name>CustomTab</name>
     </types>
     <types>
         <members>Boomi_Flow_UtilityBar</members>
+        <members>Home</members>
         <name>FlexiPage</name>
     </types>
     <types>
