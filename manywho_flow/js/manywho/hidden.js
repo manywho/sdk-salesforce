@@ -1,3 +1,4 @@
+!function(t){var e={};function n(o){if(e[o])return e[o].exports;var r=e[o]={i:o,l:!1,exports:{}};return t[o].call(r.exports,r,r.exports,n),r.l=!0,r.exports}n.m=t,n.c=e,n.d=function(t,e,o){n.o(t,e)||Object.defineProperty(t,e,{enumerable:!0,get:o})},n.r=function(t){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(t,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(t,"__esModule",{value:!0})},n.t=function(t,e){if(1&e&&(t=n(t)),8&e)return t;if(4&e&&"object"==typeof t&&t&&t.__esModule)return t;var o=Object.create(null);if(n.r(o),Object.defineProperty(o,"default",{enumerable:!0,value:t}),2&e&&"string"!=typeof t)for(var r in t)n.d(o,r,function(e){return t[e]}.bind(null,r));return o},n.n=function(t){var e=t&&t.__esModule?function(){return t.default}:function(){return t};return n.d(e,"a",e),e},n.o=function(t,e){return Object.prototype.hasOwnProperty.call(t,e)},n.p="",n(n.s=2)}([function(t,e){t.exports=React},function(t,e,n){"use strict";var o=this&&this.__extends||function(){var t=Object.setPrototypeOf||{__proto__:[]}instanceof Array&&function(t,e){t.__proto__=e}||function(t,e){for(var n in e)e.hasOwnProperty(n)&&(t[n]=e[n])};return function(e,n){function o(){this.constructor=e}t(e,n),e.prototype=null===n?Object.create(n):(o.prototype=n.prototype,new o)}}();Object.defineProperty(e,"__esModule",{value:!0});var r=function(t){function e(){return null!==t&&t.apply(this,arguments)||this}return o(e,t),e.prototype.componentDidMount=function(){var t=manywho.model.getComponent(this.props.id,this.props.flowKey),e=manywho.state.getComponent(this.props.id,this.props.flowKey),n=!1;t.attributes.active&&manywho.utils.isEqual(t.attributes.active,"true",!0)&&(n=!0);var o=null;if(t.attributes.tabLabel&&!manywho.utils.isNullOrWhitespace(t.attributes.tabLabel)&&(o=t.attributes.tabLabel),t.attributes.openSubtab&&manywho.utils.isEqual(t.attributes.openSubtab,"true",!0)){var r=e&&null!=e.contentValue?e.contentValue:t.contentValue;manywho.utils.isNullOrWhitespace(r)||sforce.console.getEnclosingPrimaryTabId(function(t){t.success||alert("Subtab cannot be opened: "+t.error),sforce.console.openSubtab(t.id,"/"+r,n,o)})}else if(t.attributes.openPrimaryTab&&manywho.utils.isEqual(t.attributes.openPrimaryTab,"true",!0)){var u=e&&null!=e.contentValue?e.contentValue:t.contentValue;if(!manywho.utils.isNullOrWhitespace(u)){sforce.console.openPrimaryTab(null,"/"+u,n,o,function(t){t.success||alert("Primary tab cannot be opened: "+t.error)})}}},e.prototype.render=function(){return manywho.log.info("Rendering Hidden: "+this.props.id),null},e}(n(0).Component);
 /*!
  Copyright 2015 ManyWho, Inc.
  Licensed under the ManyWho License, Version 1.0 (the "License"); you may not use this
@@ -7,76 +8,4 @@
  the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
  KIND, either express or implied. See the License for the specific language governing
  permissions and limitations under the License.
- */
-
-(function (manywho) {
-
-    var hidden = React.createClass({
-
-        componentDidMount: function() {
-
-            var model = manywho.model.getComponent(this.props.id, this.props.flowKey);
-            var state = manywho.state.getComponent(this.props.id, this.props.flowKey);
-
-            // Determine if the tab should be active
-            var active = false;
-            if (model.attributes.active && manywho.utils.isEqual(model.attributes.active, 'true', true)) {
-                active = true;
-            }
-
-            // Determine if the tab should have a label
-            var tabLabel = null;
-            if (model.attributes.tabLabel && !manywho.utils.isNullOrWhitespace(model.attributes.tabLabel)) {
-                tabLabel = model.attributes.tabLabel;
-            }
-
-            // Determine if we're opening a sub-tab or primary tab
-            if (model.attributes.openSubtab && manywho.utils.isEqual(model.attributes.openSubtab, 'true', true)) {
-
-                var contentValue = state && state.contentValue != null ? state.contentValue : model.contentValue;
-
-                if (!manywho.utils.isNullOrWhitespace(contentValue)) {
-
-                    sforce.console.getEnclosingPrimaryTabId(function(result) {
-                        if (!result.success) {
-                            alert('Subtab cannot be opened: ' + result.error);
-                        }
-
-                        sforce.console.openSubtab(result.id, '/' + contentValue, active, tabLabel);
-                    });
-
-                }
-
-            } else if (model.attributes.openPrimaryTab && manywho.utils.isEqual(model.attributes.openPrimaryTab, 'true', true)) {
-
-                var contentValue = state && state.contentValue != null ? state.contentValue : model.contentValue;
-
-                if (!manywho.utils.isNullOrWhitespace(contentValue)) {
-
-                    var openSuccess = function openSuccess(result) {
-                        if (!result.success) {
-                            alert('Primary tab cannot be opened: ' + result.error);
-                        }
-                    };
-
-                    sforce.console.openPrimaryTab(null, '/' + contentValue, active, tabLabel, openSuccess);
-
-                }
-
-            }
-
-        },
-
-        render: function () {
-
-            manywho.log.info('Rendering Hidden: ' + this.props.id);
-
-            return null;
-
-        }
-
-    });
-
-    manywho.component.register("hidden", hidden);
-
-}(manywho));
+ */manywho.component.register("hidden",r),e.default=r},function(t,e,n){"use strict";Object.defineProperty(e,"__esModule",{value:!0}),function(t){for(var n in t)e.hasOwnProperty(n)||(e[n]=t[n])}(n(1))}]);

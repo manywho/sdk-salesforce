@@ -1,12 +1,12 @@
 <apex:page standardController="ManyWhoFlow__c" extensions="ManyWhoFlowController">
-    <apex:stylesheet value="{!URLFOR($Resource.manywho_flow,'css/mw-bootstrap-21044ea06e.css')}"/>
+    <apex:stylesheet value="{!URLFOR($Resource.manywho_flow,'css/manywho/mw-bootstrap-7c5b55bb545d6a82cd6dcff596dd0223.css')}"/>
     <apex:stylesheet value="{!URLFOR($Resource.manywho_flow,'css/themes/mw-sf1.css')}" />
-    <apex:stylesheet value="{!URLFOR($Resource.manywho_flow,'css/ui-bootstrap-61e8109445.css')}" />
+    <apex:stylesheet value="{!URLFOR($Resource.manywho_flow,'css/manywho/ui-bootstrap-b61d71361850b00bbd5a987b316b202b.css')}" />
 
     <apex:includeScript value="{!URLFOR($Resource.manywho_flow,'js/vendor/jquery-2.1.4.min.js')}"/>
     <apex:includeScript value="{!URLFOR($Resource.manywho_flow,'js/vendor/bootstrap-3.3.6.min.js')}"/>
-    <apex:includeScript value="{!URLFOR($Resource.manywho_flow,'js/vendor/react-0.14.6.min.js')}"/>
-    <apex:includeScript value="{!URLFOR($Resource.manywho_flow,'js/vendor/react-dom-0.14.6.min.js')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.manywho_flow,'js/vendor/react-16.3.2.min.js')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.manywho_flow,'js/vendor/react-dom-16.3.2.min.js')}"/>
     <apex:includeScript value="{!URLFOR($Resource.manywho_flow,'js/vendor/socket.io-1.4.5.js')}"/>
     <apex:includeScript value="{!URLFOR($Resource.manywho_flow,'js/vendor/chosen.jquery-1.4.2.min.js')}"/>
     <apex:includeScript value="{!URLFOR($Resource.manywho_flow,'js/vendor/moment-with-locales-2.10.6.min.js')}"/>
@@ -32,13 +32,6 @@
         *
         * YOU HAVE BEEN WARNED!!! :)
         ***********************************************************************************/
-
-
-        /**************************************************************************************************************
-        * It is possible to change the default flow creating a new custom setting of type ManyWho__c
-        * then adding a record with name FlowDefault and populating the fields
-        *
-        ***************************************************************************************************************/
 
         body {
             padding: 0px !important;
@@ -341,32 +334,37 @@
                         sessionUrl: '{!$Api.Partner_Server_URL_390}'
                     },
                     navigationElementId: queryParameters['navigation-element-id'],
-                    mode: {!mode},
+                    mode: null,
                     reportingMode: queryParameters['reporting-mode'],
                     trackLocation: false,
                     replaceUrl: true,
                     collaboration: {
-                        isEnabled: true,
-                        uri: {!collaborationUri}
+                        isEnabled: true
                     },
                     autoFocusInput: true,
                     inputs: inputValues,
                     annotations: null,
-                    collapsible: {!collapsible},
+                    collapsible: false,
                     navigation: {
                         isFixed: false,
-                        isWizard: {!isWizardNavigation}
-                    },
-                    validation: {
-                        isEnabled: {!clientSideValidation}
+                        isWizard: true
                     },
                     isFullWidth: true
                 };
 
+                var tenantId = '{!tenantId}';
+                var flowId = queryParameters['flow-id'];
+
+                // If the tenant id has not be changed, we load the default Flow
+                if (tenantId.trim().length == 0) {
+                    tenantId = '1ae14654-0699-401f-aaf6-f0adbb5418c8';
+                    flowId = '0fabfe3a-3226-4288-8ea0-be69bb9cb612';
+                }
+
                 manywho.engine.initialize(
-                    '{!tenantId}',
-                    '{!flowId}',
-                    '{!flowVersionId}',
+                    tenantId,
+                    flowId,
+                    queryParameters['flow-version-id'],
                     'main',
                     stateId,
                     queryParameters['authorization'],
@@ -377,8 +375,8 @@
         };
     </script>
 
-    <script type="text/javascript" src="https://assets.manywho.com/js/ui-core-bb6dd86fe6.js"></script>
-    <script type="text/javascript" src="https://assets.manywho.com/js/ui-bootstrap-d08f705b26.js"></script>
+    <script type="text/javascript" src="https://assets.manywho.com/js/ui-core-ad99ff40418fa09a0c49.js"></script>
+    <script type="text/javascript" src="https://assets.manywho.com/js/ui-bootstrap-fe94a8e3667ca585ed93.js"></script>
 
 
     <script>
