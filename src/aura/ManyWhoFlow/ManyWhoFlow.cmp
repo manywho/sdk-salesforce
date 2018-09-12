@@ -34,17 +34,17 @@
     <aura:attribute name="persistUrl" type="Boolean" default="false" access='global'/> 
     <ltng:require scripts="{!join(',', $Resource.manywho_flow + '/js/vendor/jquery-2.1.4.min.js',
 							$Resource.manywho_flow + '/js/vendor/bootstrap-3.3.6.min.js',
-							$Resource.manywho_flow + '/js/vendor/react-0.14.6.min.js',
-							$Resource.manywho_flow + '/js/vendor/react-dom-0.14.6.min.js',
+							$Resource.manywho_flow + '/js/vendor/react-16.3.2.min.js',
+							$Resource.manywho_flow + '/js/vendor/react-dom-16.3.2.min.js',
 							$Resource.manywho_flow + '/js/vendor/socket.io-1.4.5.js',
 							$Resource.manywho_flow + '/js/vendor/chosen.jquery-1.4.2.min.js',
 							$Resource.manywho_flow + '/js/vendor/moment-with-locales-2.10.6.min.js',
 							$Resource.manywho_flow + '/js/vendor/loglevel-1.4.0.min.js',
                             $Resource.manywho_flow + '/js/manywho/init.js',
-							$Resource.manywho_flow + '/js/ui-core-bb6dd86fe6.js',
-							$Resource.manywho_flow + '/js/ui-bootstrap-d08f705b26.js')}"
-                  styles="{!join(',', $Resource.manywho_flow + '/css/mw-bootstrap-21044ea06e.css',
-							$Resource.manywho_flow + '/css/ui-bootstrap-61e8109445.css',
+							$Resource.manywho_flow + '/js/manywho/ui-core-ad99ff40418fa09a0c49.js',
+							$Resource.manywho_flow + '/js/manywho/ui-bootstrap-fe94a8e3667ca585ed93.js')}"
+                  styles="{!join(',', $Resource.manywho_flow + '/css/manywho/mw-bootstrap-7c5b55bb545d6a82cd6dcff596dd0223.css',
+							$Resource.manywho_flow + '/css/manywho/ui-bootstrap-b61d71361850b00bbd5a987b316b202b.css',
 							$Resource.manywho_flow + '/css/themes/mw-sf1.css',
 							$Resource.manywho_flow + '/css/themes/mw-undo-app.css',
 							$Resource.manywho_flow + '/css/themes/mw-paper.css')}"
