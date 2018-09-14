@@ -1,12 +1,12 @@
 <apex:page standardController="Lead" extensions="ManyWhoFlowLeadController">
-    <apex:stylesheet value="{!URLFOR($Resource.manywho_flow,'css/mw-bootstrap-21044ea06e.css')}"/>
+    <apex:stylesheet value="{!URLFOR($Resource.manywho_flow,'css/manywho/mw-bootstrap-7c5b55bb545d6a82cd6dcff596dd0223.css')}"/>
     <apex:stylesheet value="{!URLFOR($Resource.manywho_flow,'css/themes/mw-sf1.css')}" />
-    <apex:stylesheet value="{!URLFOR($Resource.manywho_flow,'css/ui-bootstrap-61e8109445.css')}" />
+    <apex:stylesheet value="{!URLFOR($Resource.manywho_flow,'css/manywho/ui-bootstrap-b61d71361850b00bbd5a987b316b202b.css')}" />
 
     <apex:includeScript value="{!URLFOR($Resource.manywho_flow,'js/vendor/jquery-2.1.4.min.js')}"/>
     <apex:includeScript value="{!URLFOR($Resource.manywho_flow,'js/vendor/bootstrap-3.3.6.min.js')}"/>
-    <apex:includeScript value="{!URLFOR($Resource.manywho_flow,'js/vendor/react-0.14.6.min.js')}"/>
-    <apex:includeScript value="{!URLFOR($Resource.manywho_flow,'js/vendor/react-dom-0.14.6.min.js')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.manywho_flow,'js/vendor/react-16.3.2.min.js')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.manywho_flow,'js/vendor/react-dom-16.3.2.min.js')}"/>
     <apex:includeScript value="{!URLFOR($Resource.manywho_flow,'js/vendor/socket.io-1.4.5.js')}"/>
     <apex:includeScript value="{!URLFOR($Resource.manywho_flow,'js/vendor/chosen.jquery-1.4.2.min.js')}"/>
     <apex:includeScript value="{!URLFOR($Resource.manywho_flow,'js/vendor/moment-with-locales-2.10.6.min.js')}"/>
@@ -367,8 +367,8 @@
         };
     </script>
 
-    <script type="text/javascript" src="https://assets.manywho.com/js/ui-core-bb6dd86fe6.js"></script>
-    <script type="text/javascript" src="https://assets.manywho.com/js/ui-bootstrap-d08f705b26.js"></script>
+    <script type="text/javascript" src="https://assets.manywho.com/js/ui-core-ad99ff40418fa09a0c49.js"></script>
+    <script type="text/javascript" src="https://assets.manywho.com/js/ui-bootstrap-fe94a8e3667ca585ed93.js"></script>
 
 
     <script>
