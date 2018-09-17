@@ -28,10 +28,10 @@ public  with sharing class ManyWhoSettingsHandler {
 
 
     public String getFlowVersionId() {
-        if (getParameterUri('flow-id') != null) {
+        if (getParameterUri('flow-version-id') != null) {
             return getParameterUri('flow-version-id');
         } else {
-            return '';
+            return defaultCustomSetting().Flow_Version_Id__c;
         }
     }
 
