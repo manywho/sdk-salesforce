@@ -356,9 +356,9 @@
                 var flowId = queryParameters['flow-id'];
 
                 // If the tenant id has not be changed, we load the default Flow
-                if (tenantId.trim().length == 0) {
-                    tenantId = '13b6e4c6-03dd-46ba-85f4-5bab7d8dffc4';
-                    flowId = 'f0da3e21-f386-4be7-9a59-c232cbe7ed5b';
+                if (tenantId.trim().length == 0 || flowId == undefined) {
+                    tenantId = '080361ba-52e8-4001-a44f-4cc88eb54237';
+                    flowId = '13b6e4c6-03dd-46ba-85f4-5bab7d8dffc4';
                 }
 
                 manywho.engine.initialize(
