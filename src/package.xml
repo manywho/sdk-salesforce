@@ -32,5 +32,5 @@
         <members>*</members>
         <name>AuraDefinitionBundle</name>
     </types>
-    <version>38.0</version>
+    <version>41.0</version>
 </Package>
