@@ -8,10 +8,10 @@ This project contains the basic configuration settings for running ManyWho insid
 You can install this code using the standard Salesforce Package Manager. However, it cannot be upgraded due to limitations in Salesforce with unmanaged packages:
 
 Production & Developer Edition
-https://login.salesforce.com/packaging/installPackage.apexp?p0=04t36000000wVg1
+https://login.salesforce.com/packaging/installPackage.apexp?p0=04t3l000002NNfX
 
 Sandboxes
-https://test.salesforce.com/packaging/installPackage.apexp?p0=04t36000000wVg1
+https://test.salesforce.com/packaging/installPackage.apexp?p0=04t3l000002NNfX
 
 After installing, you must manually configure network access:
 
