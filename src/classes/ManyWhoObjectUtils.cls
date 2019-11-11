@@ -1,5 +1,8 @@
 public class ManyWhoObjectUtils
 {
+    static final String DATE_TYPE = 'DATE';
+    static final String DATETIME_TYPE = 'DATETIME';
+    
     public static SObject getFullSObjectRecord(String objectName, String objectID) {
 
         return Database.query(getSelectById(objectName, objectID));
@@ -83,7 +86,7 @@ public class ManyWhoObjectUtils
     }
     
     public static ManyWhoAPI.TypeElementRequestAPI createMType(SObject s_object) {
-    	
+        
         Map<String, Schema.SObjectField> fieldMap = null;
         List<ManyWhoAPI.ObjectAPI> m_objects = null;
         ManyWhoAPI.TypeElementRequestAPI m_type = null;
@@ -106,8 +109,23 @@ public class ManyWhoObjectUtils
 
                 Schema.DescribeFieldResult dfield = sfield.getDescribe();
                 ManyWhoAPI.PropertyAPI property = null;
+                String value = String.valueOf(s_object.get(dfield.getName()));
 
-                property = new ManyWhoAPI.PropertyAPI(dfield.getLabel(), String.valueOf(s_object.get(dfield.getName())));
+                if(dfield.getType().name() == DATE_TYPE) {
+
+                    Date d = Date.valueOf(s_object.get(dfield.getName()));
+                    if(value != null)
+                        value = value.replace(' 00:00:00', '');
+
+                } else if(dfield.getType().name() == DATETIME_TYPE) {
+
+                    DateTime dt = DateTime.valueOf(s_object.get(dfield.getName()));
+                    if(dt != null)
+                        value = dt.format('yyyy-MM-dd\'T\'HH:mm:ss\'Z\'');
+
+                }
+
+                property = new ManyWhoAPI.PropertyAPI(dfield.getLabel(), value);
                 
                 m_object.properties.Add(property);
 
@@ -125,15 +143,15 @@ public class ManyWhoObjectUtils
 
         if (fieldMap != null &&
             s_object != null) {
-            	
+                
             String objectName = getSObjectName(s_object);
 
-			// Create the binding for the Type            
+            // Create the binding for the Type            
             m_typeBinding = new ManyWhoAPI.TypeElementBindingAPI();
-	        m_typeBinding.developerName = 'Salesforce ' + objectName;
-	        m_typeBinding.developerSummary = 'The binding for ' + objectName;
-	        m_typeBinding.databaseTableName = objectName;
-	        m_typeBinding.propertyBindings = new List<ManyWhoAPI.TypeElementPropertyBindingAPI>();
+            m_typeBinding.developerName = 'Salesforce ' + objectName;
+            m_typeBinding.developerSummary = 'The binding for ' + objectName;
+            m_typeBinding.databaseTableName = objectName;
+            m_typeBinding.propertyBindings = new List<ManyWhoAPI.TypeElementPropertyBindingAPI>();
             
             // Create the root Type
             m_type = new ManyWhoAPI.TypeElementRequestAPI(getSObjectLabel(s_object), null);            
@@ -146,10 +164,10 @@ public class ManyWhoObjectUtils
                 ManyWhoAPI.TypeElementPropertyAPI property = null;
                 ManyWhoAPI.TypeElementPropertyBindingAPI propertyBinding = null;
 
-				// Create the root property
+                // Create the root property
                 property = new ManyWhoAPI.TypeElementPropertyAPI(dfield.getLabel(), getContentTypeForDisplayType(String.valueOf(dfield.getType())));
 
-				// Create the data binding
+                // Create the data binding
                 propertyBinding = new ManyWhoAPI.TypeElementPropertyBindingAPI(dfield.getName(), dfield.getLabel(), String.valueOf(dfield.getType()));
                 
                 m_type.properties.Add(property);
@@ -202,10 +220,10 @@ public class ManyWhoObjectUtils
     }
     
     private static String getContentTypeForDisplayType(String displayType) {
-    	
-    	String contentType = null;
+        
+        String contentType = null;
 
-    	displayType = displayType.toLowerCase();
+        displayType = displayType.toLowerCase();
 
         if ('string' == displayType ||
             'id' == displayType ||
@@ -237,7 +255,7 @@ public class ManyWhoObjectUtils
         }
         else
         {
-        	// Anything else is a string to ManyWho
+            // Anything else is a string to ManyWho
             contentType = ManyWhoAPI.CONTENT_TYPE_STRING;
         }
 
